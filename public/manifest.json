@@ -1,0 +1,21 @@
+{
+  "name": "Apna Plumbers of Brampton",
+  "short_name": "Apna Plumbers",
+  "description": "Expert Brampton plumbers providing 24/7 emergency repairs, drain cleaning, and water heater services.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,907 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import FloatingCallButton from "@/components/FloatingCallButton";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import { Link, useLocation } from "react-router-dom";
+import { isDevEnvironment } from "@/utils/isDev";
+import { 
+  ShieldCheck, 
+  Sparkles, 
+  Zap, 
+  ArrowRight, 
+  ChevronRight, 
+  ArrowLeft,
+  Loader2,
+  Phone,
+  Ruler,
+  FileText,
+  ClipboardList,
+  Calendar,
+  MapPin,
+  ExternalLink
+} from "lucide-react";
+
+// Declaring standard window.fbq and Cal type helper
+declare global {
+  interface Window {
+    fbq?: (...args: any[]) => void;
+    Cal?: any;
+  }
+}
+
+interface Question {
+  id: number;
+  title: string | React.ReactNode;
+  field: string;
+  options: { label: string; value: string }[];
+}
+
+const SESSION_STORAGE_KEY = "aquavida_estimate_state";
+
+const initialFormData = {
+  poolType: "concrete", 
+  motivation: "",
+  features: "",
+  timeframe: "",
+  firstName: "",
+  email: "",
+  phone: "",
+  zipCode: "",
+  projectDetails: ""
+};
+
+const getSavedState = () => {
+  try {
+    const saved = sessionStorage.getItem(SESSION_STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (parsed.formData?.firstName?.includes("Debug")) {
+        sessionStorage.removeItem(SESSION_STORAGE_KEY);
+        return null;
+      }
+      return parsed;
+    }
+  } catch (e) {
+    console.error("Error reading saved estimate state:", e);
+  }
+  return null;
+};
+
+const recentProjects = [
+  {
+    id: "spruce-hills",
+    title: "Spruce Hills Pool and Pergola",
+    location: "Frisco, TX",
+    description: "A complete transformation featuring a custom gunite pool, integrated spa, and a luxury cedar pergola.",
+    image: "/images/projects/spruce1.png",
+    tags: ["Gunite Pool", "Cedar Pergola", "Elevated Spa"],
+    link: "/projects?project=spruce-hills"
+  },
+  {
+    id: "montalcino",
+    title: "Montalcino Backyard Retreat",
+    location: "Southlake, TX",
+    description: "Custom pool accompanied by a cozy outdoor kitchen and sunken firepit area built for gatherings.",
+    image: "/images/projects/montalcino1.png",
+    tags: ["Custom Kitchen", "Sunken Firepit", "Patio Extension"],
+    link: "/projects?project=montalcino"
+  },
+  {
+    id: "brycewood",
+    title: "Brycewood Landscaping & Pool",
+    location: "Plano, TX",
+    description: "Fresh landscaping design paired with a custom pool to complement the home's natural style.",
+    image: "/images/projects/brycewood1.png",
+    tags: ["Stacked Stone", "Integrated Spa", "Custom Landscape"],
+    link: "/projects?project=brycewood"
+  },
+  {
+    id: "garland",
+    title: "Garland Modern Pool Retreat",
+    location: "Garland, TX",
+    description: "Sleek pool design complete with custom masonry work, water features, and expansive patio deck space.",
+    image: "/images/projects/garland1.png",
+    tags: ["Modern Design", "Water Feature", "Custom Masonry"],
+    link: "/projects?project=garland"
+  }
+];
+
+const Estimate = () => {
+  const { toast } = useToast();
+  const location = useLocation();
+
+  const savedState = getSavedState();
+
+  const [step, setStep] = useState<number>(savedState?.step || 1);
+  const [formData, setFormData] = useState(savedState?.formData || initialFormData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
+
+  useEffect(() => {
+    try {
+      if (!isCompleted && !formData.firstName?.includes("Debug")) {
+        sessionStorage.setItem(
+          SESSION_STORAGE_KEY,
+          JSON.stringify({ step, formData })
+        );
+      } else {
+        sessionStorage.removeItem(SESSION_STORAGE_KEY);
+      }
+    } catch (e) {
+      console.error("Error saving estimate state:", e);
+    }
+  }, [step, formData, isCompleted]);
+
+  useEffect(() => {
+    document.title = "Free Custom Pool Proposal";
+  }, []);
+
+  useEffect(() => {
+    if (isCompleted) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [isCompleted]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get('debug') === 'success') {
+      setFormData({
+        firstName: "John (Debug)",
+        email: "john@example.com",
+        phone: "5555555555",
+        zipCode: "75201",
+        motivation: "all-of-the-above",
+        features: "90000-105000",
+        timeframe: "this-month",
+        poolType: "concrete",
+        projectDetails: "Debug project details."
+      });
+      setIsCompleted(true);
+    }
+  }, [location.search]);
+
+  useEffect(() => {
+    console.log("Triggering FB Pixel: PageView (Estimate Page)");
+    if (window.fbq) {
+      window.fbq('track', 'PageView');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isCompleted) {
+      (function (C, A, L) { 
+        let p = function (a: any, ar: any) { a.q.push(ar); }; 
+        let d = C.document; 
+        C.Cal = C.Cal || function () { 
+          let cal = C.Cal; 
+          let ar = arguments; 
+          if (!cal.loaded) { 
+            cal.ns = {}; 
+            cal.q = cal.q || []; 
+            d.head.appendChild(d.createElement("script")).src = A; 
+            cal.loaded = true; 
+          } 
+          if (ar[0] === L) { 
+            const api: any = function () { p(api, arguments); }; 
+            const namespace = ar[1]; 
+            api.q = api.q || []; 
+            if(typeof namespace === "string"){
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              p(cal.ns[namespace], ar);
+              p(cal, ["initNamespace", namespace]);
+            } else p(cal, ar); 
+            return;
+          } 
+          p(cal, ar); 
+        }; 
+      })(window as any, "https://app.cal.com/embed/embed.js", "init");
+
+      if (window.Cal) {
+        window.Cal("init", "30min", {origin:"https://app.cal.com"});
+        window.Cal.config = window.Cal.config || {};
+        window.Cal.config.forwardQueryParams = true;
+
+        window.Cal.ns["30min"]("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
+      }
+    }
+  }, [isCompleted]);
+
+  const questions: Question[] = [
+    {
+      id: 1,
+      title: "What's the primary goal with your pool?",
+      field: "motivation",
+      options: [
+        { label: "Increase home value", value: "home-value" },
+        { label: "Family entertainment", value: "family-entertainment" },
+        { label: "Aesthetics", value: "aesthetics" },
+        { label: "All of the above", value: "all-of-the-above" }
+      ]
+    },
+    {
+      id: 2,
+      title: "When is construction planned?",
+      field: "timeframe",
+      options: [
+        { label: "This week", value: "this-week" },
+        { label: "This month", value: "this-month" },
+        { label: "Next Month", value: "next-month" },
+        { label: "No Preference", value: "no-preference" }
+      ]
+    },
+    {
+      id: 3,
+      title: "What's your estimated project budget?",
+      field: "features",
+      options: [
+        { label: "$75,000 - 90,000", value: "75000-90000" },
+        { label: "$90,000 - 105,000", value: "90000-105000" },
+        { label: "$105,000 - 120,000", value: "105000-120000" },
+        { label: "$120,000+", value: "120000+" }
+      ]
+    }
+  ];
+
+  const getLabelForField = (field: string) => {
+    const val = formData[field as keyof typeof formData];
+    if (!val) return "Unspecified";
+    
+    const question = questions.find(q => q.field === field);
+    if (!question) return val;
+    
+    const match = question.options.find(opt => opt.value === val);
+    return match ? match.label : val;
+  };
+
+  const handleOptionSelect = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    setStep(prev => prev + 1);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    
+    if (id === "zipCode") {
+      const numericValue = value.replace(/[^\d]/g, "").slice(0, 5);
+      setFormData(prev => ({ ...prev, [id]: numericValue }));
+    } else {
+      setFormData(prev => ({ ...prev, [id]: value }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.firstName || !formData.email || !formData.phone || !formData.zipCode) {
+      toast({
+        title: "Incomplete details",
+        description: "Please fill in all the required contact fields.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    const digitsOnlyPhone = formData.phone.replace(/[^\d]/g, "");
+    const finalDigits = (digitsOnlyPhone.length === 11 && digitsOnlyPhone.startsWith("1")) 
+      ? digitsOnlyPhone.slice(1) 
+      : digitsOnlyPhone;
+
+    if (finalDigits.length < 10) {
+      toast({
+        title: "Invalid phone number",
+        description: "Please enter a valid phone number.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (/^0+$/.test(finalDigits)) {
+      toast({
+        title: "Invalid phone number",
+        description: "Please enter a valid phone number (cannot be all zeros).",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    if (isDevEnvironment()) {
+      console.log("🔵 [Dev Mode] Skipped sending real FormSubmit and Webhook requests.");
+      await new Promise(resolve => setTimeout(resolve, 600));
+      setIsSubmitting(false);
+      setIsProcessing(true);
+      await new Promise(resolve => setTimeout(resolve, 800));
+      setIsProcessing(false);
+      setIsCompleted(true);
+      toast({
+        title: "Proposal Requested! (Dev Mode)",
+        description: "Form submission simulated successfully without contacting FormSubmit.",
+      });
+      return;
+    }
+
+    try {
+      const formSubmitPromise = fetch("https://formsubmit.co/ajax/harchit23@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          "_subject": `New DFW Pool Lead - ${formData.firstName}`,
+          "First Name": formData.firstName,
+          "Email": formData.email,
+          "Phone": formData.phone,
+          "Zip Code": formData.zipCode,
+          "Primary Goal": getLabelForField("motivation"),
+          "Estimated Budget": getLabelForField("features"),
+          "Target Timeframe": getLabelForField("timeframe"),
+          "Project Details": formData.projectDetails || "None provided",
+          "_honey": "",
+          "_captcha": "false"
+        })
+      });
+
+      const makeWebhookPromise = fetch("https://hook.us1.make.com/qocevju1ec8yt0ov1y5pclm6gc5itsls", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          email: formData.email,
+          phone: formData.phone,
+          zipCode: formData.zipCode,
+          poolType: formData.poolType,
+          motivation: getLabelForField("motivation"),
+          features: getLabelForField("features"),
+          timeframe: getLabelForField("timeframe"),
+          projectDetails: formData.projectDetails,
+          qualified: true,
+          submittedAt: new Date().toISOString()
+        })
+      });
+
+      const [formSubmitResponse] = await Promise.all([
+        formSubmitPromise,
+        makeWebhookPromise
+      ]);
+
+      if (!formSubmitResponse.ok) {
+        throw new Error("Failed to send lead details.");
+      }
+
+      setIsSubmitting(false);
+      setIsProcessing(true);
+      await new Promise(resolve => setTimeout(resolve, 800));
+      setIsProcessing(false);
+      setIsCompleted(true);
+
+      if (window.fbq) {
+        window.fbq("track", "Lead", {
+          content_name: "Pool Proposal Quote",
+          predicted_pool_type: formData.poolType,
+          zip_code: formData.zipCode
+        });
+      }
+
+      toast({
+        title: "Proposal Requested!",
+        description: "Your configurations have been forwarded successfully.",
+      });
+
+    } catch (error) {
+      console.error(error);
+      setIsSubmitting(false);
+      setIsCompleted(true);
+      toast({
+        title: "Warning",
+        description: "Delivery delay. A representative will contact you.",
+        variant: "destructive"
+      });
+    }
+  };
+
+  const handleBack = () => {
+    if (step > 1) {
+      setStep(prev => prev - 1);
+    }
+  };
+
+  const currentProgress = (step / 4) * 100;
+
+  const howItWorksSteps = [
+    {
+      icon: <ClipboardList className="h-5 w-5 text-blue-600" />,
+      title: "Project Overview",
+      description: "Provide details about your pool project including primary goal, timeline, desired features, and contact info."
+    },
+    {
+      icon: <Phone className="h-5 w-5 text-blue-600" />,
+      title: "Initial Follow-Up",
+      description: "Our rep Harry will immediately ring you to book your in-person estimate within the next 48 hours."
+    },
+    {
+      icon: <Ruler className="h-5 w-5 text-blue-600" />,
+      title: "On-site Visit",
+      description: "Our estimator will meet you in person to take measurements and collect job scope and timeline details."
+    },
+    {
+      icon: <FileText className="h-5 w-5 text-blue-600" />,
+      title: "Full Proposal",
+      description: "Receive a complete project proposal with an accurate quote and digital render within 18 hours of our on-site visit"
+    }
+  ];
+
+  const pillClasses = "flex min-h-[2rem] items-center justify-center gap-1.5 px-2 min-[400px]:px-4 py-1 rounded-full bg-slate-900/70 text-[10px] min-[400px]:text-xs font-bold w-full text-center leading-tight text-white shadow-lg";
+
+  return (
+    <div className="min-h-screen bg-slate-50">
+      <Navbar />
+
+      {/* Compact Hero Section */}
+      <section className="relative pt-24 pb-7 lg:pt-28 lg:pb-8 overflow-hidden flex flex-col items-center text-center justify-center bg-slate-950 text-white">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/estimate-hero-bg.jpg" 
+            alt="Luxury Custom Pool Construction Background" 
+            className="w-full h-full object-cover opacity-50"
+          />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 relative z-10 w-full flex flex-col items-center gap-3.5">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight max-w-3xl [text-shadow:_0_2px_10px_rgba(0,0,0,0.8)]">
+            Get a <span className="text-[#7AD1E4]">0-Cost Pool Proposal</span> in DFW in <span className="underline italic">18hrs</span>
+          </h1>
+
+          <div className="grid grid-cols-2 gap-x-2.5 gap-y-[7.5px] max-w-3xl w-full">
+            <div className={pillClasses}>
+              <ShieldCheck className="h-3.5 w-3.5 text-[#7AD1E4] shrink-0" />
+              On-Site Visits
+            </div>
+            <div className={pillClasses}>
+              <Zap className="h-3.5 w-3.5 text-[#7AD1E4] shrink-0" />
+              Competitive Bids
+            </div>
+            <div className={pillClasses}>
+              <Sparkles className="h-3.5 w-3.5 text-[#7AD1E4] shrink-0" />
+              No hidden fees
+            </div>
+            <div className={pillClasses}>
+              <MapPin className="h-3.5 w-3.5 text-[#7AD1E4] shrink-0" />
+              DFW & Beyond
+            </div>
+          </div>
+
+          <p className="text-white text-sm italic flex items-center gap-1.5 drop-shadow-sm">
+            Full Proposal + Render delivered in 18hrs
+          </p>
+        </div>
+      </section>
+
+      {/* Multi-step card container */}
+      <section className="pb-8 px-6 relative -mt-6 z-20">
+        <div className={`mx-auto bg-white rounded-3xl shadow-2xl border border-slate-100 p-5 md:p-6 flex flex-col transition-all duration-500 ${isCompleted ? 'max-w-2xl min-h-[600px]' : 'max-w-xl'}`}>
+          
+          {isProcessing ? (
+            <div className="flex-1 flex flex-col items-center justify-center py-12 gap-8 animate-in fade-in duration-500">
+              <div className="relative">
+                <div className="h-24 w-24 border-4 border-slate-100 rounded-full" />
+                <div className="h-24 w-24 border-4 border-blue-600 border-t-transparent rounded-full animate-spin absolute inset-0" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Sparkles className="h-8 w-8 text-blue-500 animate-pulse" />
+                </div>
+              </div>
+              <div className="text-center space-y-3">
+                <h3 className="text-2xl font-bold text-slate-900">Analyzing Project Scope...</h3>
+                <p className="text-slate-500 font-medium">Matching your details with our project managers.</p>
+              </div>
+            </div>
+          ) : !isCompleted ? (
+            <div className="flex-1 flex flex-col">
+              <div className="flex justify-between items-center text-xs font-bold text-slate-400 tracking-wider uppercase mb-3">
+                <button 
+                  type="button"
+                  onClick={handleBack}
+                  disabled={step === 1}
+                  className={`flex items-center gap-1 text-sm font-semibold transition-colors ${
+                    step > 1 ? "text-blue-600 hover:text-blue-800" : "text-slate-200 cursor-not-allowed"
+                  }`}
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  Back
+                </button>
+                <span>Question {step === 4 ? 4 : step} of 4</span>
+              </div>
+
+              <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden mb-4">
+                <div 
+                  className="h-full bg-blue-600 transition-all duration-500 rounded-full" 
+                  style={{ width: `${currentProgress}%` }}
+                />
+              </div>
+
+              {step <= 3 ? (
+                <div className="flex-1">
+                  <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3.5 leading-snug">
+                    {questions[step - 1].title}
+                  </h2>
+
+                  {step === 2 && formData.motivation === "home-value" && (
+                    <div className="mb-4 -mt-1 py-2 px-3 bg-blue-50/70 border border-blue-100 rounded-xl text-sm font-semibold text-blue-600 animate-in fade-in slide-in-from-top-2 duration-500 flex items-center gap-3">
+                      In-ground pools can add 5-8% to your home's value
+                    </div>
+                  )}
+
+                  {step === 3 && (
+                    <div className="mb-4 -mt-1 py-2 px-3 bg-blue-50/70 border border-blue-100 rounded-xl text-sm font-semibold text-blue-600 animate-in fade-in slide-in-from-top-2 duration-500 flex items-center gap-3">
+                      In-ground pools typically range from $75,000 to $120,000
+                    </div>
+                  )}
+
+                  <div className="flex flex-col gap-2">
+                    {questions[step - 1].options.map((opt, index) => {
+                      const isSelected = formData[questions[step - 1].field as keyof typeof formData] === opt.value;
+                      return (
+                        <button
+                          key={index}
+                          onClick={() => handleOptionSelect(questions[step - 1].field, opt.value)}
+                          className={`w-full flex items-center justify-between text-left p-3.5 md:p-4 rounded-2xl border-2 transition-all group ${
+                            isSelected 
+                            ? "bg-blue-50/50 border-blue-600 shadow-md shadow-blue-50" 
+                            : "bg-white border-slate-100 hover:border-blue-200 hover:bg-slate-50/40"
+                          }`}
+                        >
+                          <span className={`font-semibold text-lg md:text-xl ${
+                            isSelected ? "text-blue-700" : "text-slate-800"
+                          }`}>
+                            {opt.label}
+                          </span>
+                          <ChevronRight className={`h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 ${
+                            isSelected ? "text-blue-600" : "text-slate-300"
+                          }`} />
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-3">
+                  <div className="flex flex-col gap-1">
+                    <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 leading-snug">
+                      Who's the decision maker?
+                    </h2>
+
+                    <div className="grid grid-cols-3 gap-2 bg-slate-50 border border-slate-100 p-2.5 rounded-xl mb-0.5">
+                      <div className="flex flex-col">
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tight">GOAL</span>
+                        <span className="text-xs font-semibold text-slate-700 truncate">{getLabelForField("motivation")}</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tight">Timeframe</span>
+                        <span className="text-xs font-semibold text-slate-700 truncate">{getLabelForField("timeframe")}</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tight">Budget</span>
+                        <span className="text-xs font-semibold text-slate-700 truncate">{getLabelForField("features")}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <div className="space-y-1">
+                      <Label htmlFor="firstName" className="text-slate-700 font-semibold text-sm">First Name</Label>
+                      <Input 
+                        id="firstName" 
+                        name="firstName"
+                        placeholder="John" 
+                        required 
+                        autoComplete="given-name"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
+                        className="rounded-xl py-2.5 h-11 text-sm placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" 
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <Label htmlFor="phone" className="text-slate-700 font-semibold text-sm">Phone Number</Label>
+                      <Input 
+                        id="phone" 
+                        name="phone"
+                        type="tel" 
+                        inputMode="tel"
+                        placeholder="(214) 770-5168" 
+                        required 
+                        autoComplete="tel"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="rounded-xl py-2.5 h-11 text-sm placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" 
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <Label htmlFor="email" className="text-slate-700 font-semibold text-sm">Email Address</Label>
+                      <Input 
+                        id="email" 
+                        name="email"
+                        type="email"
+                        placeholder="email@example.com" 
+                        required 
+                        autoComplete="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className="rounded-xl py-2.5 h-11 text-sm placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" 
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <Label htmlFor="zipCode" className="text-slate-700 font-semibold text-sm">Zip Code</Label>
+                      <Input 
+                        id="zipCode" 
+                        name="zipCode"
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        placeholder="75201" 
+                        required 
+                        autoComplete="postal-code"
+                        value={formData.zipCode}
+                        onChange={handleInputChange}
+                        className="rounded-xl py-2.5 h-11 text-sm placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" 
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <Label htmlFor="projectDetails" className="text-slate-700 font-semibold text-sm">Project Details (Optional)</Label>
+                      <Textarea 
+                        id="projectDetails" 
+                        name="projectDetails"
+                        placeholder="Tell us about your vision, site conditions, or special features..." 
+                        value={formData.projectDetails}
+                        onChange={handleInputChange}
+                        className="rounded-xl min-h-[70px] text-sm placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" 
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mt-auto pt-4">
+                    <Button 
+                      type="submit" 
+                      disabled={isSubmitting}
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-2xl h-auto min-h-[3.5rem] py-3 px-4 sm:px-8 text-xl font-bold shadow-md shadow-blue-600/20 transition-all active:scale-[0.98] flex justify-center items-center text-center"
+                    >
+                      {isSubmitting ? (
+                        <div className="flex items-center justify-center gap-2">
+                          <Loader2 className="h-5 w-5 animate-spin shrink-0" />
+                          <span>Finalizing Details...</span>
+                        </div>
+                      ) : (
+                        <div className="flex items-center justify-center gap-2 text-center">
+                          <span className="whitespace-normal">Submit</span>
+                          <ArrowRight className="h-5 w-5 shrink-0" />
+                        </div>
+                      )}
+                    </Button>
+                  </div>
+                </form>
+              )}
+            </div>
+          ) : (
+            <div className="flex-1 flex flex-col items-center justify-center text-center gap-5 py-4 animate-in fade-in zoom-in-95 duration-500">
+              <div className="space-y-1.5">
+                <h3 className="text-3xl font-extrabold text-slate-900">Request Received!</h3>
+                <p className="text-slate-600 text-lg max-w-md leading-relaxed mx-auto">
+                  Thank you, {formData.firstName}! We have captured your specifications.
+                </p>
+              </div>
+              
+              <div className="flex flex-col gap-6 w-full max-w-md items-center">
+                <div className="w-full flex items-center gap-2 px-4 py-2.5 bg-green-50 text-green-700 border border-green-200 rounded-2xl font-bold text-sm shadow-sm leading-relaxed text-left">
+                  Our rep Harry will ring you to discuss your project and book your in-person estimate in the next 48 hours.
+                </div>
+
+                <div className="w-full bg-slate-50 border border-slate-100 p-5 sm:p-6 rounded-2xl text-left text-sm text-slate-500 space-y-4">
+                  <div>
+                    <p className="font-bold text-slate-700 mb-1 border-b border-slate-200 pb-1.5 uppercase tracking-wider text-xs">Project Summary</p>
+                    <p>• <span className="font-semibold text-slate-600">Primary Goal:</span> {getLabelForField("motivation")}</p>
+                    <p>• <span className="font-semibold text-slate-600">Estimated Budget:</span> {getLabelForField("features")}</p>
+                    <p>• <span className="font-semibold text-slate-600">Target Timeframe:</span> {getLabelForField("timeframe")}</p>
+                    <p>• <span className="font-semibold text-slate-600">Location:</span> {formData.zipCode}</p>
+                  </div>
+
+                  <div className="space-y-2.5 w-full">
+                    <Button 
+                      data-cal-link="harchit-bhatoia-ejf2go/30min"
+                      data-cal-namespace="30min"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-2xl h-auto py-3.5 px-4 sm:px-6 text-sm sm:text-base md:text-lg font-bold shadow-md shadow-blue-600/20 transition-all active:scale-[0.98] flex justify-center items-center gap-2"
+                    >
+                      <Calendar className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
+                      <span className="truncate">Book Your Visit</span>
+                    </Button>
+
+                    <Button 
+                      asChild
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-2xl h-auto py-3.5 px-4 sm:px-6 text-sm sm:text-base md:text-lg font-bold shadow-md shadow-blue-600/20 transition-all active:scale-[0.98] flex justify-center items-center gap-2"
+                    >
+                      <Link to="/financing" className="truncate">
+                        View Financing Partners
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+                
+                <p className="text-xs text-slate-400 italic text-center px-4 leading-relaxed">
+                  Booking your visit now ensures our estimator arrives at a time that works best for your schedule.
+                </p>
+              </div>
+            </div>
+          )}
+
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="pt-2 pb-16 bg-white">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
+          <div className="flex flex-col items-center mb-4 text-center">
+            <Link to="/">
+              <img 
+                src="/images/aquavida-full-logo.png" 
+                alt="Aquavida Full Logo" 
+                className="h-12 w-auto object-contain mb-4 hover:opacity-80 transition-opacity"
+              />
+            </Link>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">How it works</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative w-full">
+            {howItWorksSteps.map((item, idx) => (
+              <div key={idx} className="flex flex-col items-start text-left p-5 bg-slate-50/50 rounded-3xl border border-slate-100 group hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 border border-blue-100 shadow-sm relative">
+                  <div className="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-white border-2 border-blue-600 text-blue-600 flex items-center justify-center font-bold text-[10px]">
+                    {idx + 1}
+                  </div>
+                  {React.cloneElement(item.icon as React.ReactElement, { 
+                    className: "h-5 w-5 transition-colors group-hover:text-white" 
+                  })}
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <div className="space-y-2">
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* A Few of Our Recent Projects Section */}
+      <section className="py-16 bg-slate-50 border-t border-slate-200/60 text-slate-900">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
+          <div className="text-center mb-12 max-w-2xl">
+            <span className="text-xs font-bold tracking-widest text-blue-600 uppercase mb-2 block">
+              Portfolio
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3">
+              A Few of Our Recent Projects
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed">
+              Explore custom pool transformations completed for homeowners across the Dallas-Fort Worth metroplex.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+            {recentProjects.map((project, idx) => (
+              <Link 
+                key={idx}
+                to={project.link}
+                className="bg-white border border-slate-200/80 rounded-3xl overflow-hidden shadow-sm hover:border-blue-500 hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-semibold text-slate-700 border border-slate-200 flex items-center gap-1.5 shadow-sm">
+                    <MapPin className="h-3 w-3 text-blue-600" />
+                    {project.location}
+                  </div>
+                  <div className="absolute top-3 right-3 bg-blue-600 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+                    <ExternalLink className="h-4 w-4" />
+                  </div>
+                </div>
+
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-slate-600 text-xs leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100">
+                    {project.tags.map((tag, tagIdx) => (
+                      <span 
+                        key={tagIdx} 
+                        className="text-[10px] font-medium px-2 py-0.5 rounded-lg bg-blue-50 text-blue-700 border border-blue-100"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Debug shortcut container serving directly as button */}
+      <div
+        role="button"
+        tabIndex={0}
+        aria-label="Debug toggle confirmation view"
+        onClick={() => {
+          if (!isCompleted) {
+            setFormData({
+              firstName: "John (Debug)",
+              email: "john@example.com",
+              phone: "(214) 770-5168",
+              zipCode: "75201",
+              motivation: "home-value",
+              features: "90000-105000",
+              timeframe: "this-month",
+              poolType: "concrete",
+              projectDetails: "Debug dummy project details for testing confirmation view."
+            });
+            setIsCompleted(true);
+          } else {
+            setFormData(initialFormData);
+            setIsCompleted(false);
+          }
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            if (!isCompleted) {
+              setFormData({
+                firstName: "John (Debug)",
+                email: "john@example.com",
+                phone: "(214) 770-5168",
+                zipCode: "75201",
+                motivation: "home-value",
+                features: "90000-105000",
+                timeframe: "this-month",
+                poolType: "concrete",
+                projectDetails: "Debug dummy project details for testing confirmation view."
+              });
+              setIsCompleted(true);
+            } else {
+              setFormData(initialFormData);
+              setIsCompleted(false);
+            }
+          }
+        }}
+        className="py-2 text-center bg-slate-100 hover:bg-slate-200 transition-colors cursor-pointer border-t border-slate-200 min-h-[16px]"
+      />
+
+      <Footer />
+      <FloatingCallButton />
+    </div>
+  );
+};
+
+export default Estimate;
