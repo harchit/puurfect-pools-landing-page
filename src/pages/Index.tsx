@@ -31,18 +31,18 @@ const Index = () => {
 
   const testimonials = [
     {
-      name: "Fahad S",
-      text: "Bruce was professional, responsive, and knowledgeable throughout the entire process. He took the time to answer all of our questions and made us feel confident every step of the way. We recommend working with him.",
+      name: "Vishal L.",
+      text: "Excellent customer service and I highly recommend Michael at Purrfect pools. This was our first pool and we could not have asked for a better experience.",
       rating: 5,
     },
     {
-      name: "Zeeshan",
-      text: "Outstanding pool builders in Riverside County! Bruce and his team designed and built a beautiful custom pool for my backyard. The work was professional, on time, and the quality is amazing. If you’re looking for trusted pool construction in Southern California, I highly recommend Bruce.",
+      name: "Cynthia S.",
+      text: "Job well done customer friendly could'nt have choosen a better company. Answers all my questions anytime of day month or year. Mike checks on us all the time making sure everyting is working. We really like our pool however the Grandkids loves it more.",
       rating: 5,
     },
     {
-      name: "Zanaja",
-      text: "If you’re looking for someone who genuinely cares about the customer experience, Bruce is the person to call. Professional, knowledgeable, and committed to delivering quality work.",
+      name: "Matthew N.",
+      text: "From start to finish a seamless process, from our first meeting discussing my vision, budget, design, and execution. Michael and his team delivered and exceeded my expectations.",
       rating: 5,
     },
   ];
@@ -190,10 +190,10 @@ const Index = () => {
                 <div>
                   <img
                     src="/images/bruce-founder.png"
-                    alt="Bruce, Founder of Purrfect Pools & Construction"
+                    alt="Michael, Founder of Purrfect Pools & Construction"
                     className="rounded-[32px] shadow-2xl w-full aspect-square object-cover object-top"
                   />
-                  <p className="text-sm font-semibold text-slate-600 mt-3 text-center">Bruce, Founder & Owner</p>
+                  <p className="text-sm font-semibold text-slate-600 mt-3 text-center">Michael, Founder & Owner</p>
                 </div>
                 <div className="bg-blue-600 p-8 rounded-[32px] text-white shadow-xl">
                   <p className="text-3xl font-black mb-2">100%</p>
