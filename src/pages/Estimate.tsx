@@ -678,22 +678,13 @@ const Estimate = () => {
                   </div>
 
                   <div className="space-y-2.5 w-full">
-                    <Button 
+                    <Button
                       data-cal-link="harchit-bhatoia-ejf2go/30min"
                       data-cal-namespace="30min"
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-2xl h-auto py-3.5 px-4 sm:px-6 text-sm sm:text-base md:text-lg font-bold shadow-md shadow-blue-600/20 transition-all active:scale-[0.98] flex justify-center items-center gap-2"
                     >
                       <Calendar className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
                       <span className="truncate">Book Your Visit</span>
-                    </Button>
-
-                    <Button 
-                      asChild
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-2xl h-auto py-3.5 px-4 sm:px-6 text-sm sm:text-base md:text-lg font-bold shadow-md shadow-blue-600/20 transition-all active:scale-[0.98] flex justify-center items-center gap-2"
-                    >
-                      <Link to="/financing" className="truncate">
-                        View Financing Partners
-                      </Link>
                     </Button>
                   </div>
                 </div>
