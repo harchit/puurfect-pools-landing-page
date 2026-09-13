@@ -752,13 +752,12 @@ const Estimate = () => {
       <section className="pt-2 pb-16 bg-white">
         <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
           <div className="flex flex-col items-center mb-4 text-center">
-            <Link to="/" className="flex items-center justify-center gap-3 mb-4">
+            <Link to="/" className="mb-4 inline-block">
               <img
-                src="/purrfect-pools-logo.jpg"
-                alt="Purrfect Pools & Construction Logo"
-                className="h-12 w-12 rounded-full object-contain bg-white p-0.5 border border-slate-200 shadow-sm hover:opacity-80 transition-opacity"
+                src="/purrfect-pools-full-logo.png"
+                alt="Purrfect Pools Logo"
+                className="h-16 md:h-20 w-auto object-contain hover:opacity-80 transition-opacity"
               />
-              <span className="font-bold text-2xl text-slate-900">Purrfect Pools</span>
             </Link>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">How it works</h2>
           </div>
