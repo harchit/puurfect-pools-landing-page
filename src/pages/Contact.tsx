@@ -292,7 +292,7 @@ const Contact = () => {
               <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm">Get In Touch</h2>
               <h3 className="text-4xl font-bold text-slate-900">Start Your Backyard Transformation</h3>
               <p className="text-slate-600 leading-relaxed">
-                Whether you're interested in a premium fiberglass or a luxury custom concrete pool, our team is ready to answer your questions and provide a detailed estimate.
+                Whether you're interested in a custom spa or a luxury custom concrete pool, our team is ready to answer your questions and provide a detailed estimate.
               </p>
             </div>
 

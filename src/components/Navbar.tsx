@@ -29,7 +29,7 @@ const Navbar = () => {
   const telLink = "tel:2147705168";
 
   // Define pages that should have a static black navbar
-  const isStaticPage = ["/fiberglass-pools", "/concrete-pools", "/spas", "/projects", "/projects/spruce"].includes(location.pathname);
+  const isStaticPage = ["/concrete-pools", "/spas", "/projects", "/projects/spruce"].includes(location.pathname);
 
   return (
     <nav

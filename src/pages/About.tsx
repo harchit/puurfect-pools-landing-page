@@ -53,7 +53,7 @@ const About = () => {
               We started with a vision to raise the standard of pool construction in Southern California.
             </p>
             <p className="text-slate-600 leading-relaxed">
-              Whether you choose a low-maintenance fiberglass shell or a fully custom gunite concrete pool, our team handles the entire process with meticulous attention to detail.
+              When you choose a fully custom gunite concrete pool, our team handles the entire process with meticulous attention to detail.
               From the initial 3D design rendering to the final landscaping touches, we are with you every step of the way.
             </p>
             <div className="grid sm:grid-cols-2 gap-6 pt-4">

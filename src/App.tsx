@@ -7,7 +7,6 @@ import Index from "./pages/Index";
 import Estimate from "./pages/Estimate";
 import Contact from "./pages/Contact";
 import ConcretePools from "./pages/ConcretePools";
-import FiberglassPools from "./pages/FiberglassPools";
 import Spas from "./pages/Spas";
 import Financing from "./pages/Financing";
 import NotFound from "./pages/NotFound";
@@ -33,7 +32,6 @@ const App = () => (
           <Route path="/estimate" element={<Estimate />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/concrete-pools" element={<ConcretePools />} />
-          <Route path="/fiberglass-pools" element={<FiberglassPools />} />
           <Route path="/spas" element={<Spas />} />
           <Route path="/financing" element={<Financing />} />
           <Route path="/about" element={<About />} />

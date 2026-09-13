@@ -16,12 +16,6 @@ const Index = () => {
       link: "/concrete-pools"
     },
     {
-      title: "Fiberglass Pools",
-      description: "Durable, low maintenance, and quick to install. Enjoy a beautiful, smooth finish that resists algae and lasts for decades.",
-      image: "/images/fiberglass-pool.jpg",
-      link: "/fiberglass-pools"
-    },
-    {
       title: "Custom Spas",
       description: "Add a touch of therapy to your backyard. Our custom-built spas and hot tubs offer year-round relaxation and luxury.",
       image: "/images/spas-luxury.jpg",
@@ -143,7 +137,7 @@ const Index = () => {
             <p className="text-lg text-slate-600">We offer the most reliable high-end pool construction methods to fit your backyard, budget, and style preference in Riverside County.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {poolTypes.map((pool, index) => (
               <Link 
                 key={index} 
