@@ -52,6 +52,9 @@ const Navbar = () => {
           <Link to="/" className="text-xs sm:text-sm font-semibold text-white hover:text-blue-400 transition-colors">
             Home
           </Link>
+          <Link to="/projects" className="text-xs sm:text-sm font-semibold text-white hover:text-blue-400 transition-colors">
+            Projects
+          </Link>
         </div>
       </div>
     </nav>
