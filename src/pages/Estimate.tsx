@@ -402,8 +402,8 @@ const Estimate = () => {
       </section>
 
       {/* Multi-step card container */}
-      <section className="pb-8 px-6 relative -mt-6 z-20">
-        <div className={`mx-auto bg-white rounded-3xl shadow-2xl border border-slate-100 p-5 md:p-6 flex flex-col transition-all duration-500 ${isCompleted ? 'max-w-2xl min-h-[600px]' : 'max-w-xl'}`}>
+      <section className="pb-4 px-6 relative -mt-6 z-20">
+        <div className={`mx-auto bg-white rounded-3xl shadow-2xl border border-slate-100 p-4 md:p-6 flex flex-col transition-all duration-500 ${isCompleted ? 'max-w-2xl' : 'max-w-xl'}`}>
           
           {isProcessing ? (
             <div className="flex-1 flex flex-col items-center justify-center py-12 gap-8 animate-in fade-in duration-500">
@@ -609,7 +609,7 @@ const Estimate = () => {
               )}
             </div>
           ) : (
-            <div className="flex-1 flex flex-col items-center justify-center text-center gap-5 py-4 animate-in fade-in zoom-in-95 duration-500">
+            <div className="flex-1 flex flex-col items-center justify-center text-center gap-4 py-1 animate-in fade-in zoom-in-95 duration-500">
               <div className="space-y-1.5">
                 <h3 className="text-3xl font-extrabold text-slate-900">Request Received!</h3>
                 <p className="text-slate-600 text-lg max-w-md leading-relaxed mx-auto">
