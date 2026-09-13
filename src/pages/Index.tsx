@@ -80,7 +80,7 @@ const Index = () => {
             </h1>
             
             <p className="text-lg lg:text-xl text-white max-w-xl leading-relaxed mt-2 drop-shadow-lg font-medium">
-              Purrfect Pools & Construction specializes in custom gunite and fiberglass pools. Transform your outdoor living space with Riverside County's premier pool builders.
+              Purrfect Pools & Construction specializes in custom gunite pools. Transform your outdoor living space with Riverside County's premier pool builders.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
