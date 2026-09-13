@@ -397,7 +397,7 @@ const Estimate = () => {
     {
       icon: <FileText className="h-5 w-5 text-blue-600" />,
       title: "Full Proposal",
-      description: "Receive a complete project proposal with an accurate quote and digital render within 24 hours of our on-site visit"
+      description: "Receive a complete proposal highlighting all project costs, timeline, and details."
     }
   ];
 
