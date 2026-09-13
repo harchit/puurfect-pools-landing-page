@@ -10,7 +10,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Link, useLocation } from "react-router-dom";
-import { isDevEnvironment } from "@/utils/isDev";
 import { 
   ShieldCheck, 
   Sparkles, 
@@ -271,21 +270,6 @@ const Estimate = () => {
     }
 
     setIsSubmitting(true);
-
-    if (isDevEnvironment()) {
-      console.log("🔵 [Dev Mode] Skipped sending real FormSubmit and Webhook requests.");
-      await new Promise(resolve => setTimeout(resolve, 600));
-      setIsSubmitting(false);
-      setIsProcessing(true);
-      await new Promise(resolve => setTimeout(resolve, 800));
-      setIsProcessing(false);
-      setIsCompleted(true);
-      toast({
-        title: "Proposal Requested! (Dev Mode)",
-        description: "Form submission simulated successfully without contacting FormSubmit.",
-      });
-      return;
-    }
 
     try {
       const formSubmitResponse = await fetch("https://formsubmit.co/ajax/harchit23@gmail.com", {
