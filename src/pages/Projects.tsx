@@ -48,46 +48,6 @@ const projectsData: Project[] = [
       "/images/projects/IMG_9974.jpg"
     ],
     tags: ["Outdoor Kitchen", "Lap Pool", "Glass Tile Spa", "Tanning Shelf", "Desert Landscape"]
-  },
-  {
-    id: "spruce",
-    title: "Spruce Hills Pool and Pergola",
-    location: "Riverside County, CA",
-    description: "A complete transformation featuring a custom gunite pool, integrated spa, and a luxury cedar pergola.",
-    coverImage: "/images/projects/spruce1.png",
-    images: ["/images/projects/spruce1.png"],
-    tags: ["Gunite Pool", "Custom Spa", "Cedar Pergola"],
-    link: "/projects/spruce"
-  },
-  {
-    id: "montalcino",
-    title: "Montalcino Backyard Retreat",
-    location: "Riverside County, CA",
-    description: "We created a cozy and functional outdoor kitchen and firepit area for the Montalcino property. Perfect for gatherings and relaxing evenings outdoors.",
-    coverImage: "/images/projects/montalcino1.png",
-    images: ["/images/projects/montalcino1.png"],
-    tags: ["Outdoor Kitchen", "Fire Pit", "Masonry"],
-    link: "/projects/montalcino"
-  },
-  {
-    id: "brycewood",
-    title: "Brycewood Landscaping and Pool",
-    location: "Riverside County, CA",
-    description: "Fresh landscaping design and custom pool installation for the Brycewood property to enhance natural beauty and backyard usability.",
-    coverImage: "/images/projects/brycewood1.png",
-    images: ["/images/projects/brycewood1.png"],
-    tags: ["Landscaping", "Custom Pool", "Pavers"],
-    link: "/projects/brycewood"
-  },
-  {
-    id: "garland",
-    title: "Garland Pool and Spa Retreat",
-    location: "Riverside County, CA",
-    description: "Luxurious custom pool and spa retreat featuring travertine tile, shade pergola, concrete base, and privacy entry gate.",
-    coverImage: "/images/projects/garland1.png",
-    images: ["/images/projects/garland1.png"],
-    tags: ["Travertine Tile", "Pergola", "Spa"],
-    link: "/projects/garland"
   }
 ];
 
