@@ -275,7 +275,7 @@ const Contact = () => {
         <div className="absolute inset-0 bg-blue-600/10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-extrabold mb-6">Contact <span className="text-blue-400">Aquavida</span></h1>
+            <h1 className="text-5xl font-extrabold mb-6">Contact <span className="text-blue-400">Purrfect Pools</span></h1>
             <p className="text-xl text-slate-300 leading-relaxed">
               Ready to build your dream pool? Reach out to our design and construction experts to schedule your consultation in the Dallas-Fort Worth area.
             </p>

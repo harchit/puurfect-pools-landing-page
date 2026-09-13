@@ -77,7 +77,7 @@ const Spas = () => {
         <div className="max-w-4xl mx-auto px-6 flex flex-col items-center gap-8">
           <h2 className="text-2xl md:text-3xl font-bold">Ready to Relax?</h2>
           <p className="text-slate-300 text-lg">
-            Let Aquavida Pools & Spas design and build your dream spa in the Dallas-Fort Worth metroplex.
+            Let Purrfect Pools & Construction design and build your dream spa in the Dallas-Fort Worth metroplex.
           </p>
           <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-10 py-8 text-xl font-bold">
             <a href="tel:2147705168" className="flex items-center gap-3">

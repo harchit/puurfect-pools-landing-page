@@ -47,14 +47,14 @@ const Navbar = () => {
         <Link to="/" className="flex flex-col group">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 rounded-full overflow-hidden bg-white flex items-center justify-center">
-              <img src="/logo-new.jpg" alt="Aquavida Pools & Spas Logo" className="h-full w-full object-contain scale-[1.21]" />
+              <img src="/purrfect-pools-logo.jpg" alt="Purrfect Pools & Construction Logo" className="h-full w-full object-cover scale-105" />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-xl leading-none text-white">
-                Aquavida
+              <span className="font-bold text-lg sm:text-xl leading-none text-white">
+                Purrfect Pools
               </span>
-              <span className="text-[11px] font-medium tracking-[0.1em] uppercase text-[#7AD1E4] font-serif italic">
-                Pools & Spas
+              <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.08em] uppercase text-[#7AD1E4] font-serif italic">
+                & Construction
               </span>
             </div>
           </div>

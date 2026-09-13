@@ -80,7 +80,7 @@ const Index = () => {
             </h1>
             
             <p className="text-lg lg:text-xl text-white max-w-xl leading-relaxed mt-2 drop-shadow-lg font-medium">
-              Aquavida Pools & Spas specializes in custom gunite and fiberglass pools. Transform your outdoor living space with DFW's premier pool builders.
+              Purrfect Pools & Construction specializes in custom gunite and fiberglass pools. Transform your outdoor living space with DFW's premier pool builders.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
@@ -190,7 +190,7 @@ const Index = () => {
                 <div>
                   <img 
                     src="/images/hassan.jpeg" 
-                    alt="Hassan, Owner of Aquavida Pools & Spas" 
+                    alt="Hassan, Owner of Purrfect Pools & Construction"
                     className="rounded-[32px] shadow-2xl w-full aspect-square object-cover" 
                   />
                   <p className="text-sm font-semibold text-slate-600 mt-3 text-center">Hassan, Owner</p>
@@ -212,7 +212,7 @@ const Index = () => {
             </div>
           </div>
           <div className="order-1 lg:order-2 flex flex-col gap-6">
-            <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm">Why Choose Aquavida</h2>
+            <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm">Why Choose Purrfect Pools</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.1]">DFW's Premier Pool Experts</h3>
             <div className="flex items-center gap-3">
               <div className="h-px w-10 bg-blue-600" />
@@ -221,7 +221,7 @@ const Index = () => {
               </p>
             </div>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Building a pool is a significant investment in your home. At Aquavida Pools & Spas, we guide you through every step of the process—from initial 3D design to the final fill. Serving the Greater Dallas-Fort Worth area, our commitment to quality craftsmanship ensures a stunning result that handles the North Texas weather perfectly.
+              Building a pool is a significant investment in your home. At Purrfect Pools & Construction, we guide you through every step of the process—from initial 3D design to the final fill. Serving the Greater Dallas-Fort Worth area, our commitment to quality craftsmanship ensures a stunning result that handles the North Texas weather perfectly.
             </p>
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
               {[
@@ -294,7 +294,7 @@ const Index = () => {
             <div className="relative z-10 flex flex-col items-center gap-8">
               <h2 className="text-3xl md:text-6xl font-bold text-slate-900 leading-tight">Ready to Dive In?</h2>
               <p className="text-slate-600 text-xl max-w-2xl leading-relaxed">
-                Contact Aquavida Pools & Spas today to schedule your free backyard consultation and start designing the pool of your dreams in Texas.
+                Contact Purrfect Pools & Construction today to schedule your free backyard consultation and start designing the pool of your dreams in Texas.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link to="/estimate" className="w-full sm:w-auto">

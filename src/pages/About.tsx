@@ -34,7 +34,7 @@ const About = () => {
         <div className="absolute inset-0 bg-slate-900/10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-extrabold mb-6">About <span className="text-blue-200">Aquavida</span></h1>
+            <h1 className="text-5xl font-extrabold mb-6">About <span className="text-blue-200">Purrfect Pools</span></h1>
             <p className="text-xl text-blue-100 leading-relaxed">
               We are DFW's trusted custom pool builders, dedicated to transforming backyards across the Dallas-Fort Worth metroplex into breathtaking luxury retreats.
             </p>
@@ -49,7 +49,7 @@ const About = () => {
             <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm">Our Story</h2>
             <h3 className="text-4xl font-bold text-slate-900">Building Oasis Destinations in DFW</h3>
             <p className="text-slate-600 leading-relaxed">
-              At Aquavida Pools & Spas, we understand that a swimming pool is more than just water—it's a lifestyle enhancement, a gathering place for family, and a centerpiece for entertaining. 
+              At Purrfect Pools & Construction, we understand that a swimming pool is more than just water—it's a lifestyle enhancement, a gathering place for family, and a centerpiece for entertaining.
               We started with a vision to raise the standard of pool construction in North Texas.
             </p>
             <p className="text-slate-600 leading-relaxed">
@@ -79,9 +79,9 @@ const About = () => {
           </div>
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl aspect-square">
-              <img 
-                src="https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&q=80&w=1000" 
-                alt="Aquavida Pool Construction Project" 
+              <img
+                src="https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&q=80&w=1000"
+                alt="Purrfect Pools Construction Project"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -98,7 +98,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4">Our Commitment</h2>
-            <h3 className="text-4xl font-bold text-slate-900 mb-6">The Aquavida Standard</h3>
+            <h3 className="text-4xl font-bold text-slate-900 mb-6">The Purrfect Pools Standard</h3>
             <p className="text-slate-600">We don't just build pools; we build relationships. Our core values reflect our dedication to delivering the highest quality product and experience.</p>
           </div>
 
@@ -121,7 +121,7 @@ const About = () => {
         <div className="max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-8">
           <h2 className="text-4xl font-bold">Ready to Dive Into Luxury?</h2>
           <p className="text-slate-400 text-lg max-w-2xl">
-            Contact Aquavida Pools & Spas today to schedule your design consultation in the Dallas-Fort Worth metroplex.
+            Contact Purrfect Pools & Construction today to schedule your design consultation in the Dallas-Fort Worth metroplex.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-10 py-8 text-xl">

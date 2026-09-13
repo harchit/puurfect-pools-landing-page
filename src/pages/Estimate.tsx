@@ -752,12 +752,13 @@ const Estimate = () => {
       <section className="pt-2 pb-16 bg-white">
         <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
           <div className="flex flex-col items-center mb-4 text-center">
-            <Link to="/">
-              <img 
-                src="/images/aquavida-full-logo.png" 
-                alt="Aquavida Full Logo" 
-                className="h-12 w-auto object-contain mb-4 hover:opacity-80 transition-opacity"
+            <Link to="/" className="flex items-center justify-center gap-3 mb-4">
+              <img
+                src="/purrfect-pools-logo.jpg"
+                alt="Purrfect Pools & Construction Logo"
+                className="h-12 w-12 rounded-full object-cover hover:opacity-80 transition-opacity"
               />
+              <span className="font-bold text-2xl text-slate-900">Purrfect Pools</span>
             </Link>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">How it works</h2>
           </div>
@@ -769,8 +770,8 @@ const Estimate = () => {
                   <div className="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-white border-2 border-blue-600 text-blue-600 flex items-center justify-center font-bold text-[10px]">
                     {idx + 1}
                   </div>
-                  {React.cloneElement(item.icon as React.ReactElement, { 
-                    className: "h-5 w-5 transition-colors group-hover:text-white" 
+                  {React.cloneElement(item.icon as React.ReactElement<{ className?: string }>, {
+                    className: "h-5 w-5 transition-colors group-hover:text-white"
                   })}
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
