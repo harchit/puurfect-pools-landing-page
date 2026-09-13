@@ -217,7 +217,7 @@ const Index = () => {
             <div className="flex items-center gap-3">
               <div className="h-px w-10 bg-blue-600" />
               <p className="text-blue-600 font-bold uppercase tracking-widest text-sm">
-                15 Years, 300+ Projects Completed
+                45 years of pool building.
               </p>
             </div>
             <p className="text-lg text-slate-600 leading-relaxed">
