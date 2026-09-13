@@ -10,19 +10,21 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Link, useLocation } from "react-router-dom";
-import { 
-  ShieldCheck, 
-  Sparkles, 
-  Zap, 
-  ArrowRight, 
-  ChevronRight, 
+import {
+  ShieldCheck,
+  Sparkles,
+  Zap,
+  ArrowRight,
+  ChevronRight,
   ArrowLeft,
   Loader2,
   Phone,
   Ruler,
   FileText,
   ClipboardList,
-  MapPin
+  MapPin,
+  X,
+  ChevronLeft
 } from "lucide-react";
 
 // Declaring standard window.fbq and Cal type helper
@@ -41,6 +43,86 @@ interface Question {
 }
 
 const SESSION_STORAGE_KEY = "aquavida_estimate_state";
+
+const estimateProjects = [
+  {
+    id: "la-quinta-villa",
+    title: "La Quinta Villa Pool & Sunken Spa",
+    location: "La Quinta, CA",
+    description: "Sleek geometric custom gunite pool with premium stone pavers, turf accent ribbons, and sunken spa.",
+    coverImage: "/images/projects/IMG_8672.jpg",
+    images: [
+      "/images/projects/IMG_8672.jpg",
+      "/images/projects/IMG_8673.jpg",
+      "/images/projects/IMG_8674.jpg"
+    ],
+    tags: ["Custom Gunite Pool", "Sunken Spa", "Turf Accents"]
+  },
+  {
+    id: "palm-desert-estate",
+    title: "Palm Desert Modern Estate & Outdoor Kitchen",
+    location: "Palm Desert, CA",
+    description: "Modern lap pool, glass tile rim spa, tanning shelf, and stacked-stone outdoor kitchen island with stainless grill.",
+    coverImage: "/images/projects/IMG_9977.jpg",
+    images: [
+      "/images/projects/IMG_9977.jpg",
+      "/images/projects/IMG_9972.jpg",
+      "/images/projects/IMG_9969.jpg",
+      "/images/projects/IMG_9970.jpg",
+      "/images/projects/IMG_9971_step.jpg",
+      "/images/projects/IMG_9973.jpg",
+      "/images/projects/IMG_9974.jpg"
+    ],
+    tags: ["Outdoor Kitchen", "Lap Pool", "Glass Tile Spa"]
+  },
+  {
+    id: "indian-wells-resort",
+    title: "Indian Wells Resort Pool & Swim-Up Bar",
+    location: "Indian Wells, CA",
+    description: "Sprawling luxury estate pool with built-in swim-up bar stools, rim spa, fire pit table, and turf grid.",
+    coverImage: "/images/projects/IMG_5701.jpeg",
+    images: [
+      "/images/projects/IMG_5701.jpeg",
+      "/images/projects/IMG_6493.jpeg"
+    ],
+    tags: ["Swim-Up Bar", "Fire Pit", "Sunken Spa"]
+  },
+  {
+    id: "rancho-mirage-fairway",
+    title: "Rancho Mirage Golf Course Fairway Pool",
+    location: "Rancho Mirage, CA",
+    description: "Fairway view pool with modern fire pit patio, cobalt blue fire glass, spillover spa, and mountain backdrop.",
+    coverImage: "/images/projects/IMG_4407.jpg",
+    images: [
+      "/images/projects/IMG_4407.jpg",
+      "/images/projects/IMG_3415.jpg"
+    ],
+    tags: ["Fairway View", "Fire Pit Lounge", "Spillover Spa"]
+  },
+  {
+    id: "palm-springs-mountain",
+    title: "Palm Springs Mountain Vista Pool & Raised Spa",
+    location: "Palm Springs, CA",
+    description: "Clean modern lap pool and raised stone spillover spa framed by sleek concrete decking and mountain views.",
+    coverImage: "/images/projects/IMG_3248.jpeg",
+    images: [
+      "/images/projects/IMG_3248.jpeg",
+      "/images/projects/IMG_3247.jpeg"
+    ],
+    tags: ["Mountain Views", "Raised Spillover Spa", "Lap Pool"]
+  },
+  {
+    id: "coachella-waterfall",
+    title: "Coachella Valley Stone Waterfall & Sheer Descent",
+    location: "Coachella Valley, CA",
+    description: "Custom gunite pool with stacked natural stone water wall, dual sheer descent waterfalls, and tanning ledge.",
+    coverImage: "/images/projects/IMG_2856.jpg",
+    images: [
+      "/images/projects/IMG_2856.jpg"
+    ],
+    tags: ["Stone Water Wall", "Sheer Descent", "Waterfall"]
+  }
+];
 
 const initialFormData = {
   poolType: "concrete", 
@@ -82,6 +164,27 @@ const Estimate = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
+  const [selectedGallery, setSelectedGallery] = useState<{ images: string[]; index: number; title: string } | null>(null);
+
+  const openLightbox = (images: string[], index: number, title: string) => {
+    setSelectedGallery({ images, index, title });
+  };
+
+  const nextImage = () => {
+    if (!selectedGallery) return;
+    setSelectedGallery({
+      ...selectedGallery,
+      index: (selectedGallery.index + 1) % selectedGallery.images.length
+    });
+  };
+
+  const prevImage = () => {
+    if (!selectedGallery) return;
+    setSelectedGallery({
+      ...selectedGallery,
+      index: (selectedGallery.index - 1 + selectedGallery.images.length) % selectedGallery.images.length
+    });
+  };
 
   useEffect(() => {
     try {
@@ -674,6 +777,148 @@ const Estimate = () => {
           </div>
         </div>
       </section>
+
+      {/* Recent Projects Portfolio Section */}
+      <section className="py-16 bg-slate-50 border-t border-slate-200/80">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2">
+                <Sparkles className="h-3.5 w-3.5" />
+                <span>Our Work</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">Recent Projects & Built Pools</h2>
+              <p className="text-slate-600 mt-2 text-base max-w-xl">
+                Take a look at real custom pool and outdoor living transformations built across Southern California.
+              </p>
+            </div>
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors group"
+            >
+              <span>Explore All Projects</span>
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {estimateProjects.map((project) => (
+              <div
+                key={project.id}
+                className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group"
+              >
+                <div
+                  className="relative h-60 overflow-hidden cursor-pointer"
+                  onClick={() => openLightbox(project.images, 0, project.title)}
+                >
+                  <img
+                    src={project.coverImage}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80" />
+                  <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+                    <MapPin className="h-3.5 w-3.5 text-blue-400" />
+                    <span>{project.location}</span>
+                  </div>
+                  {project.images.length > 1 && (
+                    <div className="absolute bottom-3 right-3 bg-blue-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md">
+                      {project.images.length} Photos
+                    </div>
+                  )}
+                </div>
+
+                <div className="p-6 flex flex-col flex-1 justify-between gap-4">
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-1">
+                      {project.title}
+                    </h3>
+                    <p className="text-slate-600 text-xs leading-relaxed line-clamp-2 mb-3">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tags.map((tag, i) => (
+                        <span key={i} className="text-[10px] font-semibold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-lg border border-slate-200">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => openLightbox(project.images, 0, project.title)}
+                    className="w-full py-2.5 bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-bold text-xs rounded-xl border border-slate-200 hover:border-blue-200 transition-all flex items-center justify-center gap-1.5"
+                  >
+                    <span>View Photos ({project.images.length})</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox Modal */}
+      {selectedGallery && (
+        <div className="fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-md flex flex-col items-center justify-between p-4 sm:p-8 animate-in fade-in duration-200">
+          <div className="w-full max-w-6xl flex items-center justify-between text-white pb-4 border-b border-slate-800">
+            <div>
+              <h4 className="text-lg sm:text-xl font-bold">{selectedGallery.title}</h4>
+              <p className="text-xs text-slate-400">Image {selectedGallery.index + 1} of {selectedGallery.images.length}</p>
+            </div>
+            <button
+              onClick={() => setSelectedGallery(null)}
+              className="p-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
+            >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+
+          <div className="relative flex-1 w-full max-w-5xl flex items-center justify-center my-4">
+            <img
+              src={selectedGallery.images[selectedGallery.index]}
+              alt={selectedGallery.title}
+              className="max-h-[75vh] max-w-full object-contain rounded-2xl shadow-2xl"
+            />
+
+            {selectedGallery.images.length > 1 && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-2 sm:left-4 p-3 rounded-full bg-slate-900/80 hover:bg-blue-600 text-white transition-colors shadow-xl"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-2 sm:right-4 p-3 rounded-full bg-slate-900/80 hover:bg-blue-600 text-white transition-colors shadow-xl"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+              </>
+            )}
+          </div>
+
+          {selectedGallery.images.length > 1 && (
+            <div className="flex gap-2 overflow-x-auto max-w-xl p-2 bg-slate-900/80 rounded-2xl border border-slate-800">
+              {selectedGallery.images.map((img, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setSelectedGallery({ ...selectedGallery, index: idx })}
+                  className={`h-14 w-16 shrink-0 rounded-lg overflow-hidden border-2 transition-all ${
+                    selectedGallery.index === idx ? "border-blue-500 scale-105" : "border-transparent opacity-60 hover:opacity-100"
+                  }`}
+                >
+                  <img src={img} alt="thumbnail" className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Debug shortcut container serving directly as button */}
       <div
