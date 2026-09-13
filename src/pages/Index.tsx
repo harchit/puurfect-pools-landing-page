@@ -71,7 +71,7 @@ const Index = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 w-fit backdrop-blur-sm">
               <MapPin className="h-3.5 w-3.5 text-blue-400" />
               <span className="text-xs font-bold text-blue-100 uppercase tracking-wider">
-                Serving Riverside County and beyond
+                Serving Riverside County
               </span>
             </div>
 
