@@ -110,17 +110,6 @@ const estimateProjects = [
       "/images/projects/IMG_3247.jpeg"
     ],
     tags: ["Mountain Views", "Raised Spillover Spa", "Lap Pool"]
-  },
-  {
-    id: "coachella-waterfall",
-    title: "Coachella Valley Stone Waterfall & Sheer Descent",
-    location: "Coachella Valley, CA",
-    description: "Custom gunite pool with stacked natural stone water wall, dual sheer descent waterfalls, and tanning ledge.",
-    coverImage: "/images/projects/IMG_2856.jpg",
-    images: [
-      "/images/projects/IMG_2856.jpg"
-    ],
-    tags: ["Stone Water Wall", "Sheer Descent", "Waterfall"]
   }
 ];
 

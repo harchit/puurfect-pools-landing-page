@@ -86,17 +86,6 @@ const projectsData: Project[] = [
     tags: ["Mountain Views", "Raised Spillover Spa", "Lap Pool", "Modern Concrete"]
   },
   {
-    id: "coachella-waterfall",
-    title: "Coachella Valley Stone Waterfall & Sheer Descent",
-    location: "Coachella Valley, CA",
-    description: "Custom gunite pool featuring stacked natural stone water wall, dual sheer descent water features, waterfall spillway, and submerged tanning ledge.",
-    coverImage: "/images/projects/IMG_2856.jpg",
-    images: [
-      "/images/projects/IMG_2856.jpg"
-    ],
-    tags: ["Stone Water Wall", "Sheer Descent", "Waterfall", "Tanning Ledge"]
-  },
-  {
     id: "indio-courtyard",
     title: "Indio Courtyard Lap Pool & Shaded Lounge",
     location: "Indio, CA",
