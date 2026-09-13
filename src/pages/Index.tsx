@@ -71,7 +71,7 @@ const Index = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 w-fit backdrop-blur-sm">
               <MapPin className="h-3.5 w-3.5 text-blue-400" />
               <span className="text-xs font-bold text-blue-100 uppercase tracking-wider">
-                Serving DFW and beyond
+                Serving Riverside County and beyond
               </span>
             </div>
 
@@ -80,7 +80,7 @@ const Index = () => {
             </h1>
             
             <p className="text-lg lg:text-xl text-white max-w-xl leading-relaxed mt-2 drop-shadow-lg font-medium">
-              Purrfect Pools & Construction specializes in custom gunite and fiberglass pools. Transform your outdoor living space with DFW's premier pool builders.
+              Purrfect Pools & Construction specializes in custom gunite and fiberglass pools. Transform your outdoor living space with Riverside County's premier pool builders.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
@@ -120,7 +120,7 @@ const Index = () => {
                     <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
                   </svg>
                 </div>
-                <span className="text-sm font-bold text-white drop-shadow-sm">DFW & Surrounding Areas</span>
+                <span className="text-sm font-bold text-white drop-shadow-sm">Riverside County & Surrounding Areas</span>
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@ const Index = () => {
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-blue-600 font-bold uppercase tracking-widest text-xs mb-3">Our Expertise</h2>
             <h3 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Build Your Oasis</h3>
-            <p className="text-lg text-slate-600">We offer the most reliable high-end pool construction methods to fit your backyard, budget, and style preference in the Dallas-Fort Worth area.</p>
+            <p className="text-lg text-slate-600">We offer the most reliable high-end pool construction methods to fit your backyard, budget, and style preference in Riverside County.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -202,7 +202,7 @@ const Index = () => {
               </div>
               <div className="space-y-6 pt-12">
                 <div className="bg-slate-900 p-8 rounded-[32px] text-white shadow-xl">
-                  <p className="text-3xl font-black mb-2">DFW</p>
+                  <p className="text-2xl font-black mb-2">Riverside</p>
                   <p className="text-xs font-bold opacity-90 uppercase tracking-widest">Wide Coverage</p>
                 </div>
                 <div className="rounded-[32px] shadow-2xl aspect-square overflow-hidden">
@@ -213,7 +213,7 @@ const Index = () => {
           </div>
           <div className="order-1 lg:order-2 flex flex-col gap-6">
             <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm">Why Choose Purrfect Pools</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.1]">DFW's Premier Pool Experts</h3>
+            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.1]">Riverside County's Premier Pool Experts</h3>
             <div className="flex items-center gap-3">
               <div className="h-px w-10 bg-blue-600" />
               <p className="text-blue-600 font-bold uppercase tracking-widest text-sm">
@@ -221,7 +221,7 @@ const Index = () => {
               </p>
             </div>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Building a pool is a significant investment in your home. At Purrfect Pools & Construction, we guide you through every step of the process—from initial 3D design to the final fill. Serving the Greater Dallas-Fort Worth area, our commitment to quality craftsmanship ensures a stunning result that handles the North Texas weather perfectly.
+              Building a pool is a significant investment in your home. At Purrfect Pools & Construction, we guide you through every step of the process—from initial 3D design to the final fill. Serving Greater Riverside County, our commitment to quality craftsmanship ensures a stunning result that handles the Southern California climate perfectly.
             </p>
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
               {[
@@ -294,7 +294,7 @@ const Index = () => {
             <div className="relative z-10 flex flex-col items-center gap-8">
               <h2 className="text-3xl md:text-6xl font-bold text-slate-900 leading-tight">Ready to Dive In?</h2>
               <p className="text-slate-600 text-xl max-w-2xl leading-relaxed">
-                Contact Purrfect Pools & Construction today to schedule your free backyard consultation and start designing the pool of your dreams in Texas.
+                Contact Purrfect Pools & Construction today to schedule your free backyard consultation and start designing the pool of your dreams in Riverside County.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link to="/estimate" className="w-full sm:w-auto">
