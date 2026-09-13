@@ -21,16 +21,16 @@ const Navbar = () => {
   const telLink = "tel:2147705168";
 
   // Define pages that should have a static black navbar
-  const isStaticPage = ["/concrete-pools", "/spas", "/projects", "/projects/spruce"].includes(location.pathname);
+  const isStaticPage = ["/concrete-pools", "/spas", "/projects", "/projects/spruce", "/financing"].includes(location.pathname);
 
   return (
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-3 sm:px-6",
-        isStaticPage 
-          ? "bg-slate-950 shadow-md py-3" 
-          : scrolled 
-            ? "bg-slate-900/95 backdrop-blur-md shadow-md py-3" 
+        isStaticPage
+          ? "bg-slate-950 shadow-md py-3"
+          : scrolled
+            ? "bg-slate-900/95 backdrop-blur-md shadow-md py-3"
             : "bg-transparent py-4"
       )}
     >
@@ -51,8 +51,11 @@ const Navbar = () => {
           </div>
         </Link>
 
-        {/* Navigation Phone Link */}
-        <div className="flex items-center">
+        {/* Navigation Right Items */}
+        <div className="flex items-center gap-4 sm:gap-6">
+          <Link to="/financing" className="text-xs sm:text-sm font-semibold text-white hover:text-blue-400 transition-colors">
+            Financing
+          </Link>
           <a href={telLink} className="text-xs sm:text-sm font-bold text-white hover:text-blue-400 flex items-center gap-1.5">
             <Phone className="h-4 w-4 text-blue-400" />
             <span>{phoneNumber}</span>

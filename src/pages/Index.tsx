@@ -84,6 +84,12 @@ const Index = () => {
                   Get a Free Estimate in 24 Hrs
                 </Button>
               </Link>
+              <Link to="/financing" className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="w-full rounded-full px-8 py-7 text-lg border-2 border-white text-white hover:bg-white hover:text-slate-900 transition-all font-bold bg-transparent">
+                  Explore Financing
+                  <ArrowRight className="h-6 w-6 ml-2" />
+                </Button>
+              </Link>
             </div>
             
             <div className="flex items-center gap-4 pt-6">
