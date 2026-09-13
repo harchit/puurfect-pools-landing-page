@@ -76,7 +76,7 @@ const Financing = () => {
     }
   ];
 
-  const cities = ["Dallas", "Fort Worth", "Plano", "Arlington", "Richardson", "Frisco", "Irving", "Garland", "McKinney", "Grand Prairie"];
+  const cities = ["Bermuda Dunes", "Palm Desert", "La Quinta", "Palm Springs", "Indio", "Rancho Mirage", "Temecula", "Murrieta", "Corona", "Riverside"];
 
   return (
     <div className="min-h-screen bg-white">
@@ -194,9 +194,9 @@ const Financing = () => {
       {/* Service Area & Final CTA */}
       <section className="py-24 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center text-center">
-          <h2 className="text-3xl font-extrabold text-slate-900 mb-6">Bringing Quality to Dallas-Fort Worth and Beyond</h2>
+          <h2 className="text-3xl font-extrabold text-slate-900 mb-6">Bringing Quality to Riverside County and Beyond</h2>
           <p className="text-lg text-slate-600 mb-10 max-w-2xl">
-            Proudly serving homeowners across the DFW metroplex and surrounding communities.
+            Proudly serving homeowners across Riverside County and surrounding Southern California communities.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-20">
             {cities.map((city, i) => (

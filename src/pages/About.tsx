@@ -36,7 +36,7 @@ const About = () => {
           <div className="max-w-3xl">
             <h1 className="text-5xl font-extrabold mb-6">About <span className="text-blue-200">Purrfect Pools</span></h1>
             <p className="text-xl text-blue-100 leading-relaxed">
-              We are DFW's trusted custom pool builders, dedicated to transforming backyards across the Dallas-Fort Worth metroplex into breathtaking luxury retreats.
+              We are Riverside County's trusted custom pool builders, dedicated to transforming backyards across Southern California into breathtaking luxury retreats.
             </p>
           </div>
         </div>
@@ -47,13 +47,13 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col gap-8">
             <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm">Our Story</h2>
-            <h3 className="text-4xl font-bold text-slate-900">Building Oasis Destinations in DFW</h3>
+            <h3 className="text-4xl font-bold text-slate-900">Building Oasis Destinations in Riverside County</h3>
             <p className="text-slate-600 leading-relaxed">
               At Purrfect Pools & Construction, we understand that a swimming pool is more than just water—it's a lifestyle enhancement, a gathering place for family, and a centerpiece for entertaining.
-              We started with a vision to raise the standard of pool construction in North Texas.
+              We started with a vision to raise the standard of pool construction in Southern California.
             </p>
             <p className="text-slate-600 leading-relaxed">
-              Whether you choose a low-maintenance fiberglass shell or a fully custom gunite concrete pool, our team handles the entire process with meticulous attention to detail. 
+              Whether you choose a low-maintenance fiberglass shell or a fully custom gunite concrete pool, our team handles the entire process with meticulous attention to detail.
               From the initial 3D design rendering to the final landscaping touches, we are with you every step of the way.
             </p>
             <div className="grid sm:grid-cols-2 gap-6 pt-4">
@@ -62,8 +62,8 @@ const About = () => {
                   <MapPin className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900">DFW Wide</p>
-                  <p className="text-sm text-slate-500">Dallas, Fort Worth, Plano, Arlington</p>
+                  <p className="font-bold text-slate-900">Riverside County</p>
+                  <p className="text-sm text-slate-500">Bermuda Dunes, Palm Desert, La Quinta, Temecula</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -121,7 +121,7 @@ const About = () => {
         <div className="max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-8">
           <h2 className="text-4xl font-bold">Ready to Dive Into Luxury?</h2>
           <p className="text-slate-400 text-lg max-w-2xl">
-            Contact Purrfect Pools & Construction today to schedule your design consultation in the Dallas-Fort Worth metroplex.
+            Contact Purrfect Pools & Construction today to schedule your design consultation in Riverside County and Southern California.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-10 py-8 text-xl">

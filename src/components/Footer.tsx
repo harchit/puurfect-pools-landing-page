@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
           </Link>
           <p className="text-sm leading-relaxed">
-            Premium custom pool builders dedicated to excellence across the Dallas-Fort Worth metroplex.
+            Premium custom pool builders dedicated to excellence across Riverside County and Southern California.
             We turn your backyard dreams into reality with expert craftsmanship and personalized service.
           </p>
         </div>
@@ -46,7 +46,7 @@ const Footer = () => {
             <div className="hidden sm:block text-slate-700">•</div>
             <div className="flex items-center gap-1.5">
               <MapPin className="h-3.5 w-3.5 text-[#7AD1E4]" />
-              <span>Office Address: Richardson, TX, 75082</span>
+              <span>Office Address: Bermuda Dunes, CA 92203</span>
             </div>
           </div>
           <p className="text-slate-500">

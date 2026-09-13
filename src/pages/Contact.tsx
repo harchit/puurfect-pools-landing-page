@@ -69,7 +69,7 @@ const Contact = () => {
   const contactInfo = [
     {
       title: "Service Areas",
-      content: "Dallas-Fort Worth Metroplex (Dallas, Fort Worth, Plano, Arlington, etc.)",
+      content: "Riverside County (Bermuda Dunes, Palm Desert, La Quinta, Palm Springs, Indio, Temecula, Murrieta, Corona, etc.)",
       icon: <MapPin className="h-6 w-6 text-blue-600" />,
     },
     {
@@ -277,7 +277,7 @@ const Contact = () => {
           <div className="max-w-3xl">
             <h1 className="text-5xl font-extrabold mb-6">Contact <span className="text-blue-400">Purrfect Pools</span></h1>
             <p className="text-xl text-slate-300 leading-relaxed">
-              Ready to build your dream pool? Reach out to our design and construction experts to schedule your consultation in the Dallas-Fort Worth area.
+              Ready to build your dream pool? Reach out to our design and construction experts to schedule your consultation in Riverside County.
             </p>
           </div>
         </div>
