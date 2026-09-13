@@ -68,7 +68,7 @@ const Contact = () => {
   const contactInfo = [
     {
       title: "Service Areas",
-      content: "Riverside County (Bermuda Dunes, Palm Desert, La Quinta, Palm Springs, Indio, Temecula, Murrieta, Corona, etc.)",
+      content: "Coachella Valley (Bermuda Dunes, Palm Desert, La Quinta, Palm Springs, Indio, Cathedral City, Rancho Mirage, etc.)",
       icon: <MapPin className="h-6 w-6 text-blue-600" />,
     },
     {
@@ -192,7 +192,7 @@ const Contact = () => {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({
-          "_subject": `New Riverside County Pool Lead - ${formData.firstName || "Customer"}${!isQualified ? " [DQ]" : ""}`,
+          "_subject": `New Coachella Valley Pool Lead - ${formData.firstName || "Customer"}${!isQualified ? " [DQ]" : ""}`,
           "First Name": formData.firstName,
           "Email": formData.email,
           "Phone": formData.phone,
@@ -247,7 +247,7 @@ const Contact = () => {
           <div className="max-w-3xl">
             <h1 className="text-5xl font-extrabold mb-6">Contact <span className="text-blue-400">Purrfect Pools</span></h1>
             <p className="text-xl text-slate-300 leading-relaxed">
-              Ready to build your dream pool? Reach out to our design and construction experts to schedule your consultation in Riverside County.
+              Ready to build your dream pool? Reach out to our design and construction experts to schedule your consultation in Coachella Valley.
             </p>
           </div>
         </div>
@@ -311,7 +311,7 @@ const Contact = () => {
                 </div>
                 <div className="text-center space-y-3">
                   <h3 className="text-2xl font-bold text-slate-900">Processing Request...</h3>
-                  <p className="text-slate-500 font-medium">Matching your details with our Riverside County team.</p>
+                  <p className="text-slate-500 font-medium">Matching your details with our Coachella Valley team.</p>
                 </div>
               </div>
             ) : isCompleted ? (

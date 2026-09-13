@@ -36,7 +36,7 @@ const About = () => {
           <div className="max-w-3xl">
             <h1 className="text-5xl font-extrabold mb-6">About <span className="text-blue-200">Purrfect Pools</span></h1>
             <p className="text-xl text-blue-100 leading-relaxed">
-              We are Riverside County's trusted custom pool builders, dedicated to transforming backyards across Southern California into breathtaking luxury retreats.
+              We are Coachella Valley's trusted custom pool builders, dedicated to transforming backyards across Southern California into breathtaking luxury retreats.
             </p>
           </div>
         </div>

@@ -382,7 +382,7 @@ const Estimate = () => {
           "Accept": "application/json"
         },
         body: JSON.stringify({
-          "_subject": `New Riverside County Pool Lead - ${formData.firstName || "Customer"}`,
+          "_subject": `New Coachella Valley Pool Lead - ${formData.firstName || "Customer"}`,
           "First Name": formData.firstName,
           "Email": formData.email,
           "Phone": formData.phone,
@@ -480,7 +480,7 @@ const Estimate = () => {
 
         <div className="max-w-4xl mx-auto px-6 relative z-10 w-full flex flex-col items-center gap-3.5">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight max-w-3xl [text-shadow:_0_2px_10px_rgba(0,0,0,0.8)]">
-            Get a <span className="text-[#7AD1E4]">0-Cost Pool Proposal</span> in Riverside County in <span className="underline italic">24hrs</span>
+            Get a <span className="text-[#7AD1E4]">Full Pool Proposal</span> in Coachella Valley in <span className="underline italic">24hrs</span>
           </h1>
 
           <div className="grid grid-cols-2 gap-x-2.5 gap-y-[7.5px] max-w-3xl w-full">
@@ -498,7 +498,7 @@ const Estimate = () => {
             </div>
             <div className={pillClasses}>
               <MapPin className="h-3.5 w-3.5 text-[#7AD1E4] shrink-0" />
-              Riverside County
+              Coachella Valley
             </div>
           </div>
         </div>

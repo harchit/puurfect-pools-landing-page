@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
           </Link>
           <p className="text-sm leading-relaxed">
-            Premium custom pool builders dedicated to excellence across Riverside County and Southern California.
+            Premium custom pool builders dedicated to excellence across Coachella Valley and Southern California.
             We turn your backyard dreams into reality with expert craftsmanship and personalized service.
           </p>
         </div>

@@ -65,7 +65,7 @@ const Index = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 w-fit backdrop-blur-sm">
               <MapPin className="h-3.5 w-3.5 text-blue-400" />
               <span className="text-xs font-bold text-blue-100 uppercase tracking-wider">
-                Serving Riverside County
+                Serving Coachella Valley
               </span>
             </div>
 
@@ -74,7 +74,7 @@ const Index = () => {
             </h1>
             
             <p className="text-lg lg:text-xl text-white max-w-xl leading-relaxed mt-2 drop-shadow-lg font-medium">
-              Purrfect Pools & Construction specializes in custom gunite pools. Transform your outdoor living space with Riverside County's premier pool builders.
+              Purrfect Pools & Construction specializes in custom gunite pools. Transform your outdoor living space with Coachella Valley's premier pool builders.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
@@ -207,7 +207,7 @@ const Index = () => {
           </div>
           <div className="order-1 lg:order-2 flex flex-col gap-6">
             <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm">Why Choose Purrfect Pools</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.1]">Riverside County's Premier Pool Experts</h3>
+            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.1]">Coachella Valley's Premier Pool Experts</h3>
             <div className="flex items-center gap-3">
               <div className="h-px w-10 bg-blue-600" />
               <p className="text-blue-600 font-bold uppercase tracking-widest text-sm">
@@ -215,7 +215,7 @@ const Index = () => {
               </p>
             </div>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Building a pool is a significant investment in your home. At Purrfect Pools & Construction, we guide you through every step of the process—from initial 3D design to the final fill. Serving Greater Riverside County, our commitment to quality craftsmanship ensures a stunning result that handles the Southern California climate perfectly.
+              Building a pool is a significant investment in your home. At Purrfect Pools & Construction, we guide you through every step of the process—from initial 3D design to the final fill. Serving the Greater Coachella Valley, our commitment to quality craftsmanship ensures a stunning result that handles the Southern California climate perfectly.
             </p>
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
               {[

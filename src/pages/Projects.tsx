@@ -151,7 +151,7 @@ const Projects = () => {
               A few of our <span className="text-blue-400">projects</span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed">
-              Explore our gallery of recently completed custom pool builds and outdoor living transformations across Riverside County and Southern California.
+              Explore our gallery of recently completed custom pool builds and outdoor living transformations across Coachella Valley and Southern California.
             </p>
           </div>
         </div>
