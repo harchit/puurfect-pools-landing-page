@@ -87,7 +87,7 @@ const Index = () => {
               <Link to="/estimate" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-7 text-lg shadow-xl shadow-blue-900/40 font-bold">
                   <Sparkles className="h-5 w-5 text-yellow-300 mr-2" />
-                  Get a Free Estimate in 18 Hrs
+                  Get a Free Estimate in 24 Hrs
                 </Button>
               </Link>
             </div>
@@ -294,7 +294,7 @@ const Index = () => {
                 <Link to="/estimate" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white rounded-full px-12 py-8 text-xl shadow-2xl shadow-blue-900/30 font-bold transition-all hover:scale-105 active:scale-95">
                     <Sparkles className="h-6 w-6 text-yellow-300 mr-2" />
-                    Get a Free Estimate in 18 Hrs
+                    Get a Free Estimate in 24 Hrs
                   </Button>
                 </Link>
               </div>
