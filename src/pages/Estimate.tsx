@@ -756,7 +756,7 @@ const Estimate = () => {
               <img
                 src="/purrfect-pools-logo.jpg"
                 alt="Purrfect Pools & Construction Logo"
-                className="h-12 w-12 rounded-full object-cover hover:opacity-80 transition-opacity"
+                className="h-12 w-12 rounded-full object-contain bg-white p-0.5 border border-slate-200 shadow-sm hover:opacity-80 transition-opacity"
               />
               <span className="font-bold text-2xl text-slate-900">Purrfect Pools</span>
             </Link>

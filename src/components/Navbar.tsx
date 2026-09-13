@@ -46,8 +46,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex flex-col group">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full overflow-hidden bg-white flex items-center justify-center">
-              <img src="/purrfect-pools-logo.jpg" alt="Purrfect Pools & Construction Logo" className="h-full w-full object-cover scale-105" />
+            <div className="h-10 w-10 rounded-full overflow-hidden bg-white flex items-center justify-center p-0.5 shadow-sm">
+              <img src="/purrfect-pools-logo.jpg" alt="Purrfect Pools & Construction Logo" className="h-full w-full object-contain" />
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-lg sm:text-xl leading-none text-white">

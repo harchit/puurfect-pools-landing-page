@@ -17,8 +17,8 @@ const Footer = () => {
               Purrfect Pools & Construction
             </span>
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full overflow-hidden border border-[#7AD1E4]/30 bg-white flex items-center justify-center transition-transform group-hover:scale-105">
-                <img src="/purrfect-pools-logo.jpg" alt="Purrfect Pools & Construction Logo" className="h-full w-full object-cover scale-105" />
+              <div className="h-10 w-10 rounded-full overflow-hidden border border-[#7AD1E4]/30 bg-white flex items-center justify-center p-0.5 transition-transform group-hover:scale-105">
+                <img src="/purrfect-pools-logo.jpg" alt="Purrfect Pools & Construction Logo" className="h-full w-full object-contain" />
               </div>
               <div className="flex flex-col text-left">
                 <span className="font-bold text-lg leading-none text-white transition-colors group-hover:text-blue-200">
