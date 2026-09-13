@@ -324,7 +324,7 @@ const Contact = () => {
                 </div>
                 <div className="text-center space-y-3">
                   <h3 className="text-2xl font-bold text-slate-900">Processing Request...</h3>
-                  <p className="text-slate-500 font-medium">Matching your details with our DFW team.</p>
+                  <p className="text-slate-500 font-medium">Matching your details with our Riverside County team.</p>
                 </div>
               </div>
             ) : isCompleted ? (

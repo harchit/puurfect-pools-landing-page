@@ -28,7 +28,7 @@ const ConcretePools = () => {
               Why <span className="text-blue-600">Gunite?</span>
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
-              When you want complete freedom of design, a custom concrete (gunite or shotcrete) pool is the answer. Create a true architectural masterpiece in your DFW home.
+              When you want complete freedom of design, a custom concrete (gunite or shotcrete) pool is the answer. Create a true architectural masterpiece in your Riverside County home.
             </p>
             <div className="flex gap-4 pt-2">
               <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-6 text-lg">

@@ -28,7 +28,7 @@ const Spas = () => {
               Custom <span className="text-blue-600">Spas & Hot Tubs</span>
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Elevate your backyard experience with a custom-built spa. Whether as a standalone feature or seamlessly integrated into your new pool, our spas offer the ultimate in relaxation and therapy for DFW homeowners.
+              Elevate your backyard experience with a custom-built spa. Whether as a standalone feature or seamlessly integrated into your new pool, our spas offer the ultimate in relaxation and therapy for Riverside County homeowners.
             </p>
             <div className="flex justify-start gap-4 pt-2">
               <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-6 text-lg font-bold">

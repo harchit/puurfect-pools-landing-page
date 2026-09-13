@@ -34,7 +34,7 @@ const Projects = () => {
       title: "Garland Pool and Spa Retreat",
       image: "/images/projects/garland1.png",
       link: "/projects/garland",
-      description: "We designed a custom pool and spa retreat for this Garland, Texas property. The goal was to create a luxurious, functional, and visually appealing outdoor living space featuring travertine tile, a pergola with a concrete base, enhanced privacy fencing, and a remote-controlled entry gate"
+      description: "We designed a custom pool and spa retreat for this Riverside County property. The goal was to create a luxurious, functional, and visually appealing outdoor living space featuring travertine tile, a pergola with a concrete base, enhanced privacy fencing, and a remote-controlled entry gate"
     }
   ];
 

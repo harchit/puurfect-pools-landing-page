@@ -10,7 +10,7 @@ const About = () => {
   const values = [
     {
       title: "Quality Craftsmanship",
-      description: "We use only premium materials and proven construction techniques to ensure your pool lasts a lifetime in the North Texas climate.",
+      description: "We use only premium materials and proven construction techniques to ensure your pool lasts a lifetime in the Southern California climate.",
       icon: <ShieldCheck className="h-8 w-8 text-blue-600" />,
     },
     {
