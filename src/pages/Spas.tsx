@@ -80,9 +80,9 @@ const Spas = () => {
             Let Purrfect Pools & Construction design and build your dream spa in Riverside County.
           </p>
           <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-10 py-8 text-xl font-bold">
-            <a href="tel:2147705168" className="flex items-center gap-3">
+            <a href="tel:4422342161" className="flex items-center gap-3">
               <Phone className="h-6 w-6" />
-              <span>Call (214) 770-5168</span>
+              <span>Call (442) 234-2161</span>
             </a>
           </Button>
         </div>

@@ -74,8 +74,8 @@ const Contact = () => {
     },
     {
       title: "Phone Number",
-      content: "(214) 770-5168",
-      link: "tel:2147705168",
+      content: "(442) 234-2161",
+      link: "tel:4422342161",
       icon: <Phone className="h-6 w-6 text-blue-600" />,
     },
     {
@@ -303,9 +303,9 @@ const Contact = () => {
                 <h4 className="font-bold text-slate-900 text-2xl mb-2">Schedule a Free Consultation</h4>
                 <p className="text-slate-600 mb-6 text-xl">We'll visit your property, discuss your vision, and provide a comprehensive plan for your new pool.</p>
                 <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-6">
-                    <a href="tel:2147705168" className="flex items-center justify-center gap-2">
+                    <a href="tel:4422342161" className="flex items-center justify-center gap-2">
                         <Phone className="h-4 w-4" />
-                        <span className="text-xl">Call (214) 770-5168</span>
+                        <span className="text-xl">Call (442) 234-2161</span>
                     </a>
                 </Button>
             </div>
@@ -397,11 +397,11 @@ const Contact = () => {
                       <div className="grid grid-cols-2 gap-3">
                         <div className="space-y-1.5">
                           <Label htmlFor="phone" className="text-slate-700 font-semibold text-base">Phone Number</Label>
-                          <Input id="phone" type="tel" inputMode="tel" placeholder="(214) 770-5168" required autoComplete="tel" value={formData.phone} onChange={handleInputChange} className="rounded-xl py-4 h-11 text-base placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" />
+                          <Input id="phone" type="tel" inputMode="tel" placeholder="(442) 234-2161" required autoComplete="tel" value={formData.phone} onChange={handleInputChange} className="rounded-xl py-4 h-11 text-base placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" />
                         </div>
                         <div className="space-y-1.5">
                           <Label htmlFor="zipCode" className="text-slate-700 font-semibold text-base">Zip Code</Label>
-                          <Input id="zipCode" inputMode="numeric" pattern="[0-9]*" placeholder="75201" required autoComplete="postal-code" value={formData.zipCode} onChange={handleInputChange} className="rounded-xl py-4 h-11 text-base placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" />
+                          <Input id="zipCode" inputMode="numeric" pattern="[0-9]*" placeholder="92203" required autoComplete="postal-code" value={formData.zipCode} onChange={handleInputChange} className="rounded-xl py-4 h-11 text-base placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" />
                         </div>
                       </div>
                       <div className="space-y-1.5">

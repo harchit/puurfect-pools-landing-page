@@ -25,9 +25,9 @@ const StickyCallButton = () => {
         asChild
         className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full py-8 text-xl font-bold shadow-2xl shadow-blue-900/40 flex items-center justify-center gap-3 border-2 border-white/20 backdrop-blur-sm"
       >
-        <a href="tel:2147705168">
+        <a href="tel:4422342161">
           <Phone className="h-6 w-6 animate-pulse" />
-          Call (214) 770-5168
+          Call (442) 234-2161
         </a>
       </Button>
     </div>

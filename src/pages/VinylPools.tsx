@@ -79,12 +79,12 @@ const VinylPools = () => {
         <div className="max-w-4xl mx-auto px-6 flex flex-col items-center gap-8">
           <h2 className="text-4xl font-bold">Start Designing Your Vinyl Pool</h2>
           <p className="text-blue-100 text-lg">
-            Our Florida team is ready to help you choose the perfect shape, size, and liner pattern for your backyard.
+            Our Riverside County team is ready to help you choose the perfect shape, size, and liner pattern for your backyard.
           </p>
           <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-slate-100 rounded-full px-10 py-8 text-xl">
-            <a href="tel:2147705168" className="flex items-center gap-3">
+            <a href="tel:4422342161" className="flex items-center gap-3">
               <Phone className="h-6 w-6" />
-              Call (214) 770-5168
+              Call (442) 234-2161
             </a>
           </Button>
         </div>

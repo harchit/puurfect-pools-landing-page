@@ -74,12 +74,12 @@ const ConcretePools = () => {
         <div className="max-w-4xl mx-auto px-6 flex flex-col items-center gap-8">
           <h2 className="text-4xl font-bold">Build Your Masterpiece</h2>
           <p className="text-blue-100 text-lg">
-            Speak with our custom concrete pool designers at Purrfect Pools & Construction to start planning your perfect DFW outdoor sanctuary.
+            Speak with our custom concrete pool designers at Purrfect Pools & Construction to start planning your perfect Riverside County outdoor sanctuary.
           </p>
           <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-slate-100 rounded-full px-10 py-8 text-xl">
-            <a href="tel:2147705168" className="flex items-center gap-3">
+            <a href="tel:4422342161" className="flex items-center gap-3">
               <Phone className="h-6 w-6" />
-              <span>Call (214) 770-5168</span>
+              <span>Call (442) 234-2161</span>
             </a>
           </Button>
         </div>

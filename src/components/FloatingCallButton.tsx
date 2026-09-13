@@ -33,9 +33,9 @@ const FloatingCallButton = () => {
         asChild
         className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full py-3.5 px-6 text-lg sm:text-xl md:text-2xl font-extrabold shadow-2xl shadow-blue-900/40 flex items-center justify-center gap-3 border-2 border-white/20 backdrop-blur-md h-auto"
       >
-        <a href="sms:+12147705168" className="flex items-center gap-3 whitespace-nowrap">
+        <a href="sms:+14422342161" className="flex items-center gap-3 whitespace-nowrap">
           <MessageSquare className="h-5 w-5 md:h-6 md:w-6 animate-pulse shrink-0" />
-          <span className="whitespace-nowrap">Text or Call (214) 770-5168</span>
+          <span className="whitespace-nowrap">Text or Call (442) 234-2161</span>
         </a>
       </Button>
     </div>

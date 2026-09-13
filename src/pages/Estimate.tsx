@@ -547,17 +547,17 @@ const Estimate = () => {
 
                     <div className="space-y-1">
                       <Label htmlFor="phone" className="text-slate-700 font-semibold text-sm">Phone Number</Label>
-                      <Input 
-                        id="phone" 
+                      <Input
+                        id="phone"
                         name="phone"
-                        type="tel" 
+                        type="tel"
                         inputMode="tel"
-                        placeholder="(214) 770-5168" 
-                        required 
+                        placeholder="(442) 234-2161"
+                        required
                         autoComplete="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="rounded-xl py-2.5 h-11 text-sm placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" 
+                        className="rounded-xl py-2.5 h-11 text-sm placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal"
                       />
                     </div>
 
@@ -705,8 +705,8 @@ const Estimate = () => {
             setFormData({
               firstName: "John (Debug)",
               email: "john@example.com",
-              phone: "(214) 770-5168",
-              zipCode: "75201",
+              phone: "(442) 234-2161",
+              zipCode: "92203",
               motivation: "home-value",
               features: "90000-105000",
               timeframe: "this-month",
@@ -725,8 +725,8 @@ const Estimate = () => {
               setFormData({
                 firstName: "John (Debug)",
                 email: "john@example.com",
-                phone: "(214) 770-5168",
-                zipCode: "75201",
+                phone: "(442) 234-2161",
+                zipCode: "92203",
                 motivation: "home-value",
                 features: "90000-105000",
                 timeframe: "this-month",
