@@ -6,8 +6,7 @@ import { Button } from "@/components/ui/button";
 import { 
   CheckCircle2, 
   Sparkles,
-  Home,
-  Check
+  Home
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import FloatingCallButton from "@/components/FloatingCallButton";
@@ -25,71 +24,20 @@ const Financing = () => {
     "Complete backyard transformations"
   ];
 
-  const lenders = [
-    {
-      title: "VistaFi",
-      image: "/images/vistafi-logo.png",
-      idealFor: "Homeowners looking for dedicated pool financing with predictable monthly payments and flexible repayment options.",
-      benefits: [
-        "Access to multiple lenders",
-        "Competitive financing solutions",
-        "Fast online application",
-        "Flexible loan amounts",
-        "Quick approval process"
-      ]
-    },
-    {
-      title: "Viking Capital",
-      image: "/images/viking-logo.png",
-      idealFor: "Homeowners seeking flexible financing with a straightforward application process.",
-      benefits: [
-        "Flexible financing programs",
-        "Quick approval process",
-        "Multiple repayment options",
-        "Competitive rates",
-        "Financing for pools, spas, and outdoor living"
-      ]
-    },
-    {
-      title: "Lyon Financial",
-      image: "/images/lyon-logo.png",
-      idealFor: "Homeowners looking for dedicated pool financing with predictable monthly payments and flexible repayment options.",
-      benefits: [
-        "Loans designed specifically for pools",
-        "Fixed interest rates",
-        "No prepayment penalties",
-        "Long repayment terms",
-        "Financing for pools, spas, and more"
-      ]
-    },
-    {
-      title: "HFS Home Improvement Loans",
-      image: "/images/hfs-logo.webp",
-      idealFor: "Homeowners planning complete outdoor living projects beyond just a swimming pool.",
-      benefits: [
-        "No home equity required",
-        "Competitive fixed rates",
-        "Flexible repayment terms",
-        "Fast funding",
-        "Simple online application"
-      ]
-    }
-  ];
-
   const cities = ["Bermuda Dunes", "Palm Desert", "La Quinta", "Palm Springs", "Indio", "Rancho Mirage", "Temecula", "Murrieta", "Corona", "Riverside"];
 
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Overview Section - Now the Hero */}
-      <section className="pt-32 pb-12">
+      {/* Overview Section - Hero */}
+      <section className="pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col gap-6">
             <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">— Financing Your Dream</span>
             <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">Flexible Financing for Your <span className="text-blue-600 italic font-instrument">Outdoor Haven</span></h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              A custom pool or outdoor living project is a meaningful investment. Compare trusted lenders below to find financing options that help you explore a more flexible way to begin your project.
+              A custom pool or outdoor living project is a meaningful investment. Explore flexible financing solutions that help you begin your backyard transformation with ease.
             </p>
             <div className="grid sm:grid-cols-2 gap-y-3 gap-x-8 mt-4">
               {projectItems.map((item, i) => (
@@ -120,39 +68,8 @@ const Financing = () => {
         </div>
       </section>
 
-      {/* Lender Cards Section */}
-      <section className="pb-24 pt-0">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8">
-            {lenders.map((lender, i) => (
-              <div key={i} className="bg-white border-2 border-slate-100 rounded-[32px] p-8 md:p-10 flex flex-col h-full hover:border-blue-200 transition-colors">
-                <div className="h-16 mb-6 flex items-center">
-                  <img src={lender.image} alt={lender.title} className="max-h-full max-w-[200px] object-contain" />
-                </div>
-                <h3 className="text-2xl font-extrabold text-slate-900 mb-4">{lender.title}</h3>
-                <div className="bg-blue-50 rounded-2xl p-4 mb-6">
-                  <p className="text-sm font-bold text-blue-700 uppercase tracking-wider mb-2">Ideal For</p>
-                  <p className="text-slate-700 leading-relaxed">{lender.idealFor}</p>
-                </div>
-                <div className="space-y-4 mb-2 flex-grow">
-                  <p className="font-bold text-slate-900">Benefits:</p>
-                  {lender.benefits.map((benefit, bi) => (
-                    <div key={bi} className="flex items-start gap-3">
-                      <div className="mt-1 bg-green-100 rounded-full p-0.5">
-                        <Check className="h-3 w-3 text-green-600" />
-                      </div>
-                      <span className="text-slate-600 text-sm leading-snug">{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* HELOC Highlight */}
-      <section className="py-12 bg-blue-600 text-white">
+      <section className="py-16 bg-blue-600 text-white">
         <div className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center gap-8">
           <div className="p-4 bg-white/10 rounded-full">
             <Home className="h-12 w-12" />
