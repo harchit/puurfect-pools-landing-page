@@ -49,8 +49,8 @@ const Navbar = () => {
 
         {/* Navigation Right Items */}
         <div className="flex items-center gap-4 sm:gap-6">
-          <Link to="/financing" className="text-xs sm:text-sm font-semibold text-white hover:text-blue-400 transition-colors">
-            Financing
+          <Link to="/" className="text-xs sm:text-sm font-semibold text-white hover:text-blue-400 transition-colors">
+            Home
           </Link>
         </div>
       </div>
