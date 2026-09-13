@@ -25,7 +25,7 @@ const VinylPools = () => {
               Custom <span className="text-blue-600">Vinyl Liner</span> Pools
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Vinyl liner pools offer unparalleled versatility and affordability without sacrificing beauty. Perfect for families looking to create a customized backyard oasis quickly and cost-effectively in Greater Florida.
+              Vinyl liner pools offer unparalleled versatility and affordability without sacrificing beauty. Perfect for families looking to create a customized backyard oasis quickly and cost-effectively in Riverside County.
             </p>
             <div className="flex gap-4 pt-4">
               <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-6">
