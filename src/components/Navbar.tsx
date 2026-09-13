@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
@@ -17,12 +16,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Projects", path: "/projects" },
-    { name: "About", path: "/about" },
-  ];
 
   const phoneNumber = "(214) 770-5168";
   const telLink = "tel:2147705168";
@@ -58,29 +51,11 @@ const Navbar = () => {
           </div>
         </Link>
 
-        {/* Navigation Bar Content */}
-        <div className="flex items-center gap-2.5 sm:gap-6 lg:gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={cn(
-                "text-xs sm:text-sm font-semibold transition-colors hover:text-blue-400",
-                location.pathname === link.path || (link.path === "/projects" && location.pathname.startsWith("/projects")) ? "text-blue-400" : "text-white"
-              )}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-3 sm:px-5 h-8 sm:h-10 text-xs sm:text-sm">
-            <Link to="/estimate" className="flex items-center gap-1 sm:gap-1.5 font-bold">
-              <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 animate-pulse text-yellow-300" />
-              <span className="hidden min-[400px]:inline">Free </span>Estimate
-            </Link>
-          </Button>
-          <a href={telLink} className="text-xs sm:text-sm font-bold text-white hover:text-blue-400 flex items-center gap-1 sm:gap-1.5">
-            <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-400" />
-            <span className="hidden lg:inline">{phoneNumber}</span>
+        {/* Navigation Phone Link */}
+        <div className="flex items-center">
+          <a href={telLink} className="text-xs sm:text-sm font-bold text-white hover:text-blue-400 flex items-center gap-1.5">
+            <Phone className="h-4 w-4 text-blue-400" />
+            <span>{phoneNumber}</span>
           </a>
         </div>
       </div>
