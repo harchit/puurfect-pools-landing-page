@@ -24,8 +24,7 @@ import {
   FileText,
   ClipboardList,
   Calendar,
-  MapPin,
-  ExternalLink
+  MapPin
 } from "lucide-react";
 
 // Declaring standard window.fbq and Cal type helper
@@ -73,45 +72,6 @@ const getSavedState = () => {
   }
   return null;
 };
-
-const recentProjects = [
-  {
-    id: "spruce-hills",
-    title: "Spruce Hills Pool and Pergola",
-    location: "Frisco, TX",
-    description: "A complete transformation featuring a custom gunite pool, integrated spa, and a luxury cedar pergola.",
-    image: "/images/projects/spruce1.png",
-    tags: ["Gunite Pool", "Cedar Pergola", "Elevated Spa"],
-    link: "/projects?project=spruce-hills"
-  },
-  {
-    id: "montalcino",
-    title: "Montalcino Backyard Retreat",
-    location: "Southlake, TX",
-    description: "Custom pool accompanied by a cozy outdoor kitchen and sunken firepit area built for gatherings.",
-    image: "/images/projects/montalcino1.png",
-    tags: ["Custom Kitchen", "Sunken Firepit", "Patio Extension"],
-    link: "/projects?project=montalcino"
-  },
-  {
-    id: "brycewood",
-    title: "Brycewood Landscaping & Pool",
-    location: "Plano, TX",
-    description: "Fresh landscaping design paired with a custom pool to complement the home's natural style.",
-    image: "/images/projects/brycewood1.png",
-    tags: ["Stacked Stone", "Integrated Spa", "Custom Landscape"],
-    link: "/projects?project=brycewood"
-  },
-  {
-    id: "garland",
-    title: "Garland Modern Pool Retreat",
-    location: "Garland, TX",
-    description: "Sleek pool design complete with custom masonry work, water features, and expansive patio deck space.",
-    image: "/images/projects/garland1.png",
-    tags: ["Modern Design", "Water Feature", "Custom Masonry"],
-    link: "/projects?project=garland"
-  }
-];
 
 const Estimate = () => {
   const { toast } = useToast();
@@ -780,71 +740,6 @@ const Estimate = () => {
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* A Few of Our Recent Projects Section */}
-      <section className="py-16 bg-slate-50 border-t border-slate-200/60 text-slate-900">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
-          <div className="text-center mb-12 max-w-2xl">
-            <span className="text-xs font-bold tracking-widest text-blue-600 uppercase mb-2 block">
-              Portfolio
-            </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3">
-              A Few of Our Recent Projects
-            </h2>
-            <p className="text-slate-600 text-base leading-relaxed">
-              Explore custom pool transformations completed for homeowners across the Dallas-Fort Worth metroplex.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-            {recentProjects.map((project, idx) => (
-              <Link 
-                key={idx}
-                to={project.link}
-                className="bg-white border border-slate-200/80 rounded-3xl overflow-hidden shadow-sm hover:border-blue-500 hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
-                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-semibold text-slate-700 border border-slate-200 flex items-center gap-1.5 shadow-sm">
-                    <MapPin className="h-3 w-3 text-blue-600" />
-                    {project.location}
-                  </div>
-                  <div className="absolute top-3 right-3 bg-blue-600 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
-                    <ExternalLink className="h-4 w-4" />
-                  </div>
-                </div>
-
-                <div className="p-5 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-slate-600 text-xs leading-relaxed mb-4">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100">
-                    {project.tags.map((tag, tagIdx) => (
-                      <span 
-                        key={tagIdx} 
-                        className="text-[10px] font-medium px-2 py-0.5 rounded-lg bg-blue-50 text-blue-700 border border-blue-100"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Link>
             ))}
           </div>
         </div>
