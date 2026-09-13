@@ -2,12 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Menu, X, Sparkles } from "lucide-react";
+import { Phone, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -34,7 +33,7 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-3 sm:px-6",
         isStaticPage 
           ? "bg-slate-950 shadow-md py-3" 
           : scrolled 
@@ -42,88 +41,49 @@ const Navbar = () => {
             : "bg-transparent py-4"
       )}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="flex flex-col group">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full overflow-hidden bg-white flex items-center justify-center p-0.5 shadow-sm">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+        <Link to="/" className="flex flex-col group shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="h-9 w-9 sm:h-10 sm:w-10 rounded-full overflow-hidden bg-white flex items-center justify-center p-0.5 shadow-sm">
               <img src="/purrfect-pools-logo.jpg" alt="Purrfect Pools & Construction Logo" className="h-full w-full object-contain" />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-lg sm:text-xl leading-none text-white">
+              <span className="font-bold text-base sm:text-xl leading-none text-white">
                 Purrfect Pools
               </span>
-              <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.08em] uppercase text-[#7AD1E4] font-serif italic">
+              <span className="text-[9px] sm:text-[11px] font-medium tracking-[0.08em] uppercase text-[#7AD1E4] font-serif italic">
                 & Construction
               </span>
             </div>
           </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+        {/* Navigation Bar Content */}
+        <div className="flex items-center gap-2.5 sm:gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               className={cn(
-                "text-sm font-semibold transition-colors hover:text-blue-400",
+                "text-xs sm:text-sm font-semibold transition-colors hover:text-blue-400",
                 location.pathname === link.path || (link.path === "/projects" && location.pathname.startsWith("/projects")) ? "text-blue-400" : "text-white"
               )}
             >
               {link.name}
             </Link>
           ))}
-          <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-5">
-            <Link to="/estimate" className="flex items-center gap-1.5 font-bold">
-              <Sparkles className="h-4 w-4 animate-pulse text-yellow-300" />
-              Free Estimate
+          <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-3 sm:px-5 h-8 sm:h-10 text-xs sm:text-sm">
+            <Link to="/estimate" className="flex items-center gap-1 sm:gap-1.5 font-bold">
+              <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 animate-pulse text-yellow-300" />
+              <span className="hidden min-[400px]:inline">Free </span>Estimate
             </Link>
           </Button>
-          <a href={telLink} className="text-sm font-bold text-white hover:text-blue-400 flex items-center gap-1.5">
-            <Phone className="h-4 w-4 text-blue-400" />
-            <span>{phoneNumber}</span>
+          <a href={telLink} className="text-xs sm:text-sm font-bold text-white hover:text-blue-400 flex items-center gap-1 sm:gap-1.5">
+            <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-400" />
+            <span className="hidden lg:inline">{phoneNumber}</span>
           </a>
         </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
       </div>
-
-      {/* Mobile Nav */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-slate-900 border-t border-slate-800 shadow-xl p-6 flex flex-col gap-4 animate-in fade-in slide-in-from-top-5">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              onClick={() => setIsOpen(false)}
-              className={cn(
-                "text-lg font-semibold",
-                location.pathname === link.path || (link.path === "/projects" && location.pathname.startsWith("/projects")) ? "text-blue-400" : "text-white"
-              )}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white w-full py-6 text-lg">
-            <Link to="/estimate" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2 font-bold">
-              <Sparkles className="h-5 w-5 text-yellow-300 animate-pulse" />
-              Get Free Estimate
-            </Link>
-          </Button>
-          <Button asChild variant="outline" className="text-white border-white/20 w-full py-6 text-lg bg-slate-850">
-            <a href={telLink} className="flex items-center justify-center gap-2">
-              <Phone className="h-5 w-5 text-blue-400" />
-              <span>{phoneNumber}</span>
-            </a>
-          </Button>
-        </div>
-      )}
     </nav>
   );
 };
