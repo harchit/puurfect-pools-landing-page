@@ -468,8 +468,9 @@ const Estimate = () => {
         </div>
 
         <div className="max-w-4xl mx-auto px-6 relative z-10 w-full flex flex-col items-center gap-3.5">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight max-w-3xl [text-shadow:_0_2px_10px_rgba(0,0,0,0.8)]">
-            Get a <span className="text-[#7AD1E4]">Full Pool Proposal</span> in Coachella Valley in <span className="underline italic">24hrs</span>
+          <h1 className="text-[1.8rem] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight max-w-3xl [text-shadow:_0_2px_10px_rgba(0,0,0,0.8)]">
+            <span className="block sm:inline">Get a <span className="text-[#7AD1E4]">Full Pool Proposal</span></span>{" "}
+            <span className="block sm:inline">in Coachella Valley in <span className="underline italic">24hrs</span></span>
           </h1>
 
           <div className="grid grid-cols-2 gap-x-2.5 gap-y-[7.5px] max-w-3xl w-full">
