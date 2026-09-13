@@ -27,18 +27,6 @@ const Financing = () => {
 
   const lenders = [
     {
-      title: "VistaFi",
-      image: "/images/vistafi-logo.png",
-      idealFor: "Homeowners looking for dedicated pool financing with predictable monthly payments and flexible repayment options.",
-      benefits: [
-        "Access to multiple lenders",
-        "Competitive financing solutions",
-        "Fast online application",
-        "Flexible loan amounts",
-        "Quick approval process"
-      ]
-    },
-    {
       title: "Viking Capital",
       image: "/images/viking-logo.png",
       idealFor: "Homeowners seeking flexible financing with a straightforward application process.",
@@ -48,18 +36,6 @@ const Financing = () => {
         "Multiple repayment options",
         "Competitive rates",
         "Financing for pools, spas, and outdoor living"
-      ]
-    },
-    {
-      title: "Lyon Financial",
-      image: "/images/lyon-logo.png",
-      idealFor: "Homeowners looking for dedicated pool financing with predictable monthly payments and flexible repayment options.",
-      benefits: [
-        "Loans designed specifically for pools",
-        "Fixed interest rates",
-        "No prepayment penalties",
-        "Long repayment terms",
-        "Financing for pools, spas, and more"
       ]
     },
     {
