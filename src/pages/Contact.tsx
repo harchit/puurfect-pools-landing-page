@@ -201,7 +201,7 @@ const Contact = () => {
     }
 
     try {
-      const formSubmitPromise = fetch("https://formsubmit.co/ajax/harchit23@gmail.com", {
+      const formSubmitResponse = await fetch("https://formsubmit.co/ajax/harchit23@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({
@@ -219,23 +219,6 @@ const Contact = () => {
           "_honey": "", "_captcha": "false"
         })
       });
-
-      let makeWebhookPromise = Promise.resolve({ ok: true });
-      if (isQualified) {
-        makeWebhookPromise = fetch("https://hook.us1.make.com/qocevju1ec8yt0ov1y5pclm6gc5itsls", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            firstName: formData.firstName, email: formData.email, phone: formData.phone, zipCode: formData.zipCode,
-            poolType: formData.poolType, motivation: getLabelForField("motivation"),
-            features: getLabelForField("features"), timeframe: getLabelForField("timeframe"),
-            financing: getLabelForField("financing"), projectDetails: formData.projectDetails,
-            qualified: true, submittedAt: new Date().toISOString()
-          })
-        });
-      }
-
-      const [formSubmitResponse] = await Promise.all([formSubmitPromise, makeWebhookPromise]);
 
       if (!formSubmitResponse.ok) throw new Error("Failed to send lead details.");
 
