@@ -296,7 +296,7 @@ const Estimate = () => {
           "Accept": "application/json"
         },
         body: JSON.stringify({
-          "_subject": `New DFW Pool Lead - ${formData.firstName}`,
+          "_subject": `New Riverside County Pool Lead - ${formData.firstName}`,
           "First Name": formData.firstName,
           "Email": formData.email,
           "Phone": formData.phone,
