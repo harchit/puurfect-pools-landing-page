@@ -48,6 +48,66 @@ const projectsData: Project[] = [
       "/images/projects/IMG_9974.jpg"
     ],
     tags: ["Outdoor Kitchen", "Lap Pool", "Glass Tile Spa", "Tanning Shelf", "Desert Landscape"]
+  },
+  {
+    id: "indian-wells-resort",
+    title: "Indian Wells Resort Pool & Swim-Up Bar",
+    location: "Indian Wells, CA",
+    description: "Sprawling luxury estate pool featuring built-in swim-up bar stools, integrated rim spa, stacked-stone fire pit table, and a geometric turf grid lounge area.",
+    coverImage: "/images/projects/IMG_5701.jpeg",
+    images: [
+      "/images/projects/IMG_5701.jpeg",
+      "/images/projects/IMG_6493.jpeg"
+    ],
+    tags: ["Swim-Up Bar", "Fire Pit", "Sunken Spa", "Turf Grid"]
+  },
+  {
+    id: "rancho-mirage-fairway",
+    title: "Rancho Mirage Golf Course Fairway Pool",
+    location: "Rancho Mirage, CA",
+    description: "Custom fairway view pool boasting a modern fire pit patio, cobalt blue fire glass pit, spillover spa with waterfall features, and golf course backdrop.",
+    coverImage: "/images/projects/IMG_4407.jpg",
+    images: [
+      "/images/projects/IMG_4407.jpg",
+      "/images/projects/IMG_3415.jpg"
+    ],
+    tags: ["Fairway View", "Fire Pit Lounge", "Spillover Spa", "Custom Tile"]
+  },
+  {
+    id: "palm-springs-mountain",
+    title: "Palm Springs Mountain Vista Pool & Raised Spa",
+    location: "Palm Springs, CA",
+    description: "Clean modern lap pool and raised stone spillover spa framed by sleek concrete decking, black wrought iron perimeter, and panoramic mountain vistas.",
+    coverImage: "/images/projects/IMG_3248.jpeg",
+    images: [
+      "/images/projects/IMG_3248.jpeg",
+      "/images/projects/IMG_3247.jpeg"
+    ],
+    tags: ["Mountain Views", "Raised Spillover Spa", "Lap Pool", "Modern Concrete"]
+  },
+  {
+    id: "coachella-waterfall",
+    title: "Coachella Valley Stone Waterfall & Sheer Descent",
+    location: "Coachella Valley, CA",
+    description: "Custom gunite pool featuring stacked natural stone water wall, dual sheer descent water features, waterfall spillway, and submerged tanning ledge.",
+    coverImage: "/images/projects/IMG_2856.jpg",
+    images: [
+      "/images/projects/IMG_2856.jpg"
+    ],
+    tags: ["Stone Water Wall", "Sheer Descent", "Waterfall", "Tanning Ledge"]
+  },
+  {
+    id: "indio-courtyard",
+    title: "Indio Courtyard Lap Pool & Shaded Lounge",
+    location: "Indio, CA",
+    description: "Geometric courtyard lap pool featuring an integrated square spa, synthetic turf lawn accents, concrete coping, and a full covered patio lounge.",
+    coverImage: "/images/projects/IMG_2892.jpeg",
+    images: [
+      "/images/projects/IMG_2892.jpeg",
+      "/images/projects/IMG_2890.jpg",
+      "/images/projects/IMG_7199.jpg"
+    ],
+    tags: ["Courtyard Pool", "Shaded Patio", "Integrated Spa", "Synthetic Turf"]
   }
 ];
 
