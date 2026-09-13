@@ -26,17 +26,17 @@ const Index = () => {
   const testimonials = [
     {
       name: "Vishal L.",
-      text: "Excellent customer service and I highly recommend Michael at Purrfect pools. This was our first pool and we could not have asked for a better experience.",
+      text: "Excellent customer service and I highly recommend Bruce at Purrfect pools. This was our first pool and we could not have asked for a better experience.",
       rating: 5,
     },
     {
       name: "Cynthia S.",
-      text: "Job well done customer friendly could'nt have choosen a better company. Answers all my questions anytime of day month or year. Mike checks on us all the time making sure everyting is working. We really like our pool however the Grandkids loves it more.",
+      text: "Job well done customer friendly could'nt have choosen a better company. Answers all my questions anytime of day month or year. Bruce checks on us all the time making sure everyting is working. We really like our pool however the Grandkids loves it more.",
       rating: 5,
     },
     {
       name: "Matthew N.",
-      text: "From start to finish a seamless process, from our first meeting discussing my vision, budget, design, and execution. Michael and his team delivered and exceeded my expectations.",
+      text: "From start to finish a seamless process, from our first meeting discussing my vision, budget, design, and execution. Bruce and his team delivered and exceeded my expectations.",
       rating: 5,
     },
   ];
@@ -184,10 +184,10 @@ const Index = () => {
                 <div>
                   <img
                     src="/images/bruce-founder.png"
-                    alt="Michael, Founder of Purrfect Pools & Construction"
+                    alt="Bruce, Founder of Purrfect Pools & Construction"
                     className="rounded-[32px] shadow-2xl w-full aspect-square object-cover object-top"
                   />
-                  <p className="text-sm font-semibold text-slate-600 mt-3 text-center">Michael, Founder & Owner</p>
+                  <p className="text-sm font-semibold text-slate-600 mt-3 text-center">Bruce, Founder & Owner</p>
                 </div>
                 <div className="bg-blue-600 p-8 rounded-[32px] text-white shadow-xl">
                   <p className="text-3xl font-black mb-2">100%</p>
