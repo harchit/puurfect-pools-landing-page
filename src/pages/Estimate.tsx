@@ -414,10 +414,6 @@ const Estimate = () => {
               Riverside County
             </div>
           </div>
-
-          <p className="text-white text-sm italic flex items-center gap-1.5 drop-shadow-sm">
-            Full Proposal + Render delivered in 24hrs
-          </p>
         </div>
       </section>
 
