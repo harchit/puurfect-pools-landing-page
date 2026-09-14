@@ -34,6 +34,12 @@ interface Question {
   options: { label: string; value: string }[];
 }
 
+const SERVICED_ZIP_CODES = new Set([
+  "92201", "92203", "92210", "92211", "92230", "92234", "92236", "92240",
+  "92241", "92252", "92253", "92256", "92258", "92260", "92262", "92264",
+  "92268", "92270", "92276", "92282", "92284", "92549", "92561", "92277", "92278"
+]);
+
 const Contact = () => {
   const { toast } = useToast();
   const [step, setStep] = useState<number>(1);
@@ -186,28 +192,31 @@ const Contact = () => {
 
     setIsSubmitting(true);
     const isQualified = formData.financing !== "not-thought";
+    const isServicedZip = SERVICED_ZIP_CODES.has((formData.zipCode || "").trim());
 
     try {
-      const formSubmitResponse = await fetch("https://formsubmit.co/ajax/harchit23@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({
-          "_subject": `New Coachella Valley Pool Lead - ${formData.firstName || "Customer"}${!isQualified ? " [DQ]" : ""}`,
-          "First Name": formData.firstName,
-          "Email": formData.email,
-          "Phone": formData.phone,
-          "Zip Code": formData.zipCode,
-          "Motivation": getLabelForField("motivation"),
-          "Estimated Budget": getLabelForField("features"),
-          "Target Timeframe": getLabelForField("timeframe"),
-          "Financing Plan": getLabelForField("financing"),
-          "Project Details": formData.projectDetails || "None provided",
-          "Qualified": isQualified ? "Yes" : "No",
-          "_honey": "", "_captcha": "false"
-        })
-      });
+      if (isServicedZip) {
+        const formSubmitResponse = await fetch("https://formsubmit.co/ajax/harchit23@gmail.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            "_subject": `New Coachella Valley Pool Lead - ${formData.firstName || "Customer"}${!isQualified ? " [DQ]" : ""}`,
+            "First Name": formData.firstName,
+            "Email": formData.email,
+            "Phone": formData.phone,
+            "Zip Code": formData.zipCode,
+            "Motivation": getLabelForField("motivation"),
+            "Estimated Budget": getLabelForField("features"),
+            "Target Timeframe": getLabelForField("timeframe"),
+            "Financing Plan": getLabelForField("financing"),
+            "Project Details": formData.projectDetails || "None provided",
+            "Qualified": isQualified ? "Yes" : "No",
+            "_honey": "", "_captcha": "false"
+          })
+        });
 
-      if (!formSubmitResponse.ok) throw new Error("Failed to send lead details.");
+        if (!formSubmitResponse.ok) throw new Error("Failed to send lead details.");
+      }
 
       setIsSubmitting(false);
       setIsProcessing(true);
@@ -215,7 +224,7 @@ const Contact = () => {
       setIsProcessing(false);
       setIsCompleted(true);
 
-      if (isQualified && window.fbq) {
+      if (isServicedZip && isQualified && window.fbq) {
         window.fbq("track", "Lead", {
           content_name: "Contact Form Quote",
           zip_code: formData.zipCode,
