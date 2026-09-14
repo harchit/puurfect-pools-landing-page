@@ -442,7 +442,7 @@ const Estimate = () => {
     {
       icon: <Ruler className="h-5 w-5 text-blue-600" />,
       title: "On-site Visit",
-      description: "Our estimator will meet you in person to take measurements and collect job scope and timeline details."
+      description: "Our project manager Mike will meet you in-person to take measurements and collect job scope and project details."
     },
     {
       icon: <FileText className="h-5 w-5 text-blue-600" />,
