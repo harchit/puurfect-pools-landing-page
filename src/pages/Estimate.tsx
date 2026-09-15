@@ -120,11 +120,12 @@ const estimateProjects = [
 ];
 
 const initialFormData = {
-  poolType: "concrete", 
+  poolType: "concrete",
   motivation: "",
   features: "",
   timeframe: "",
   firstName: "",
+  lastName: "",
   email: "",
   phone: "",
   zipCode: "",
@@ -211,6 +212,7 @@ const Estimate = () => {
     if (params.get('debug') === 'success') {
       setFormData({
         firstName: "John (Debug)",
+        lastName: "Doe",
         email: "john@example.com",
         phone: "5555555555",
         zipCode: "75201",
@@ -335,7 +337,7 @@ const Estimate = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.firstName || !formData.email || !formData.phone || !formData.zipCode) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.zipCode) {
       toast({
         title: "Incomplete details",
         description: "Please fill in all the required contact fields.",
@@ -380,8 +382,9 @@ const Estimate = () => {
             "Accept": "application/json"
           },
           body: JSON.stringify({
-            "_subject": `New Coachella Valley Pool Lead - ${formData.firstName || "Customer"}`,
+            "_subject": `New Coachella Valley Pool Lead - ${formData.firstName || "Customer"} ${formData.lastName || ""}`.trim(),
             "First Name": formData.firstName,
+            "Last Name": formData.lastName,
             "Email": formData.email,
             "Phone": formData.phone,
             "Zip Code": formData.zipCode,
@@ -614,18 +617,33 @@ const Estimate = () => {
                   </div>
 
                   <div className="space-y-1.5">
-                    <div className="space-y-1">
-                      <Label htmlFor="firstName" className="text-slate-700 font-semibold text-sm">First Name</Label>
-                      <Input 
-                        id="firstName" 
-                        name="firstName"
-                        placeholder="John" 
-                        required 
-                        autoComplete="given-name"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        className="rounded-xl py-2.5 h-11 text-sm placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" 
-                      />
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="space-y-1">
+                        <Label htmlFor="firstName" className="text-slate-700 font-semibold text-sm">First Name</Label>
+                        <Input
+                          id="firstName"
+                          name="firstName"
+                          placeholder="John"
+                          required
+                          autoComplete="given-name"
+                          value={formData.firstName}
+                          onChange={handleInputChange}
+                          className="rounded-xl py-2.5 h-11 text-sm placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <Label htmlFor="lastName" className="text-slate-700 font-semibold text-sm">Last Name</Label>
+                        <Input
+                          id="lastName"
+                          name="lastName"
+                          placeholder="Smith"
+                          required
+                          autoComplete="family-name"
+                          value={formData.lastName}
+                          onChange={handleInputChange}
+                          className="rounded-xl py-2.5 h-11 text-sm placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal"
+                        />
+                      </div>
                     </div>
 
                     <div className="space-y-1">
@@ -929,6 +947,7 @@ const Estimate = () => {
           if (!isCompleted) {
             setFormData({
               firstName: "John (Debug)",
+              lastName: "Doe",
               email: "john@example.com",
               phone: "(442) 234-2161",
               zipCode: "92203",
