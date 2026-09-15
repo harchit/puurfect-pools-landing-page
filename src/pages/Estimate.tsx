@@ -381,7 +381,7 @@ const Estimate = () => {
           },
           body: JSON.stringify({
             "_subject": `New Coachella Valley Pool Lead - ${formData.firstName || "Customer"}`,
-            "First Name": formData.firstName,
+            "Full Name": formData.firstName,
             "Email": formData.email,
             "Phone": formData.phone,
             "Zip Code": formData.zipCode,
@@ -615,16 +615,16 @@ const Estimate = () => {
 
                   <div className="space-y-1.5">
                     <div className="space-y-1">
-                      <Label htmlFor="firstName" className="text-slate-700 font-semibold text-sm">First Name</Label>
-                      <Input 
-                        id="firstName" 
-                        name="firstName"
-                        placeholder="John" 
-                        required 
-                        autoComplete="given-name"
+                      <Label htmlFor="firstName" className="text-slate-700 font-semibold text-sm">Full Name</Label>
+                      <Input
+                        id="firstName"
+                        name="name"
+                        placeholder="John Doe"
+                        required
+                        autoComplete="name"
                         value={formData.firstName}
                         onChange={handleInputChange}
-                        className="rounded-xl py-2.5 h-11 text-sm placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" 
+                        className="rounded-xl py-2.5 h-11 text-sm placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal"
                       />
                     </div>
 

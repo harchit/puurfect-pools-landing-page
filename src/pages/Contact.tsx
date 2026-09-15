@@ -201,7 +201,7 @@ const Contact = () => {
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify({
             "_subject": `New Coachella Valley Pool Lead - ${formData.firstName || "Customer"}${!isQualified ? " [DQ]" : ""}`,
-            "First Name": formData.firstName,
+            "Full Name": formData.firstName,
             "Email": formData.email,
             "Phone": formData.phone,
             "Zip Code": formData.zipCode,
@@ -387,8 +387,8 @@ const Contact = () => {
                     </h2>
                     <div className="space-y-3.5">
                       <div className="space-y-1.5">
-                        <Label htmlFor="firstName" className="text-slate-700 font-semibold text-base">First Name</Label>
-                        <Input id="firstName" placeholder="Your Name" required autoComplete="given-name" value={formData.firstName} onChange={handleInputChange} className="rounded-xl py-4 h-11 text-base placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" />
+                        <Label htmlFor="firstName" className="text-slate-700 font-semibold text-base">Full Name</Label>
+                        <Input id="firstName" name="name" placeholder="John Doe" required autoComplete="name" value={formData.firstName} onChange={handleInputChange} className="rounded-xl py-4 h-11 text-base placeholder:italic placeholder:text-slate-300/60 placeholder:font-normal" />
                       </div>
                       <div className="grid grid-cols-2 gap-3">
                         <div className="space-y-1.5">
