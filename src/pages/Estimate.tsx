@@ -742,7 +742,7 @@ const Estimate = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="pt-2 pb-16 bg-white">
+      <section className="pt-2 pb-0 mb-0 bg-white">
         <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
           <div className="flex flex-col items-center mb-4 text-center">
             <Link to="/" className="mb-2 inline-block">
