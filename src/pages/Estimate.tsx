@@ -745,13 +745,16 @@ const Estimate = () => {
       <section className="pt-2 pb-16 bg-white">
         <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
           <div className="flex flex-col items-center mb-4 text-center">
-            <Link to="/" className="mb-4 inline-block">
+            <Link to="/" className="mb-2 inline-block">
               <img
                 src="/purrfect-pools-full-logo.png"
                 alt="Purrfect Pools Logo"
                 className="h-16 md:h-20 w-auto object-contain hover:opacity-80 transition-opacity"
               />
             </Link>
+            <p className="text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">
+              Serving Coachella Valley since 1980
+            </p>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">How it works</h2>
           </div>
 
