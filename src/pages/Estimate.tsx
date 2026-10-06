@@ -778,6 +778,23 @@ const Estimate = () => {
               </div>
             ))}
           </div>
+
+          {/* Areas We Serve Map Section */}
+          <div className="mt-14 w-full flex flex-col items-center text-center">
+            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">
+              Areas We Serve
+            </h3>
+            <p className="text-slate-600 text-sm max-w-xl mb-6">
+              Proudly building and remodeling custom pools across Palm Springs, Palm Desert, La Quinta, Rancho Mirage, Indio, Cathedral City, and surrounding Coachella Valley communities.
+            </p>
+            <div className="w-full max-w-3xl rounded-3xl overflow-hidden border border-slate-200/80 shadow-lg bg-slate-50/50 p-3 sm:p-4">
+              <img
+                src="/coachella-valley-service-map.jpg"
+                alt="Coachella Valley Service Area Map"
+                className="w-full h-auto object-contain rounded-2xl"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
