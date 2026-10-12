@@ -490,11 +490,11 @@ const Estimate = () => {
             </div>
             <div className={pillClasses}>
               <Zap className="h-3.5 w-3.5 text-[#7AD1E4] shrink-0" />
-              Competitive Bids
+              Founded 1980
             </div>
             <div className={pillClasses}>
               <Sparkles className="h-3.5 w-3.5 text-[#7AD1E4] shrink-0" />
-              No hidden fees
+              Owner Led
             </div>
             <div className={pillClasses}>
               <MapPin className="h-3.5 w-3.5 text-[#7AD1E4] shrink-0" />
